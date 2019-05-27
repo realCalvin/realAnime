@@ -1,0 +1,131 @@
+<html>
+
+    <head>
+        <title>Anime Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <!-- SCRIPTs -->
+        <link href="css/main.css" rel="stylesheet"/>
+
+    </head>
+    
+    <body>
+       <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="loginLabel">Login</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form id="login-form">
+                      <h6>Email: </h6>
+                      <input type="email" name="email" class="form-control center-block" placeholder="Your Email" required><br>
+                      <h6>Password: </h6>
+                      <input type="password" name="password" class="form-control center-block" placeholder="Your Password" required>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary form-control center-block" id="login-submit">Submit</button>
+                <button type="button" class="btn btn-secondary form-control center-block" id="login-forget">Forgot Password</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="registerLabel">Register</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <form id="login-form">
+                      <h6>Email: </h6>
+                      <input type="email" name="email" class="form-control center-block" placeholder="Your Email" required><br>
+                      <h6>Password: </h6>
+                      <input type="password" name="password" class="form-control center-block" placeholder="Your Password" required>
+                      <br>
+                      <h6>Phone Number: </h6>
+                      <input type="text" name="phone" class="form-control center-block" placeholder="Optional">
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary form-control center-block" id="register-submit">Register</button>
+              </div> 
+            </div>
+          </div>
+        </div>
+        
+        <nav class="navbar navbar-expand-md">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-navicon"></i>
+                    </span>
+            </button>
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item ml-auto">
+                        <button class="btn btn-primary"  data-toggle="modal" data-target="#loginModal">Login</button>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <button class="btn btn-success" data-toggle="modal" data-target="#registerModal">Register</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container search">
+            <div class="jumbotron" id="landing-page">
+                <h3 class="text-center">
+                    <a href="index.html"><img id="my-logo" src="img/logo.png"></a>
+                    <br>
+                    <img id="my-name" src="img/name.png"></h3>
+                <form id="searchForm">
+                    <input type="text" class="form-control" id="searchText" placeholder="Search Anime">
+                </form>
+            </div>
+        </div>
+        
+        <div class="container anime-list">
+            <div class="preload">
+                
+            </div>
+            <div class="row" id="animes">
+
+            </div>
+        </div>
+
+        <!-- SCRIPT -->
+         <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCOAQsW3aA3CKkQNnopwhZ5-j-LvR2YMCo",
+            authDomain: "anime-a89f7.firebaseapp.com",
+            databaseURL: "https://anime-a89f7.firebaseio.com",
+            projectId: "anime-a89f7",
+            storageBucket: "anime-a89f7.appspot.com",
+            messagingSenderId: "576186521103",
+            appId: "1:576186521103:web:e93d273af5fec36f"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+        </script>
+        
+        <script src="js/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.5/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/main.js"></script>
+        
+
+    </body>
+    
+</html>

@@ -1,0 +1,196 @@
+body {
+	background-color: black;
+	color: white;
+}
+.navbar-toggler-icon{
+    color: white;
+}
+.collapse{
+    padding-right: 15px;
+}
+.nav-item{
+    padding: 15px 10px;
+}
+.preload{
+    display: none;
+}
+.preload::before{
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #fc5c65;
+    bottom: 15%;
+    left: 30%;
+    border-radius: 20px;
+    animation: loading 4s infinite linear;
+}
+@keyframes loading {
+    0%{
+        transform: translate(-50%) rotate(0deg);
+        background-color: #e66767;
+    }
+    25%{
+        background-color: #FFC312;
+    }
+    50%{
+        left: 70%;
+        bottom: 15%;
+        background-color: #f0932b;
+    }
+    75%{
+        background-color: #e66767;
+    }
+    100%{
+        transform: translate(-50%) rotate(1440deg);
+        background-color: #f6e58d;
+    }
+}
+.modal{
+    top: 20%;
+    color: black;
+}
+#anime-load{
+    padding-top: 40%;
+}
+#landing-page{
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+}
+#landing-page img{
+    height: 15%;
+}
+#my-logo:hover{
+    height: 15.5%;
+    transition-delay: 0.08s;
+}
+#anime{
+    display: hidden;
+    padding: 50px 0 20px 0;
+}
+#my-name{
+    height: 8% !important;
+}
+#searchForm{
+    padding-top: 20px;
+}
+#searchForm input{
+    height: 50px;
+}
+#searchForm input:hover{
+    box-shadow: 4px 5px 40px white;
+    transition-delay: 0.08s;
+}
+.search .jumbotron { 
+	background-color: transparent;
+	color: white;
+}
+.anime-list{
+    padding-top: 35%;
+}
+#animes{
+    display: none;
+}
+#animes .col-md-3 .well{
+	height: 420px;
+}
+#animes a{
+	margin-top: 10px;
+}
+#animes h6{
+	margin-top: 10px;
+}
+.anime-card {
+	padding: 5px;
+}
+
+.anime-info{
+	list-style-type: none;
+}
+.anime-info-item{
+	padding-top: 5px;
+}
+.anime-image{
+    height: 240px;
+    width: 175px; 
+}
+.anime-image:hover{
+    height: 255px;
+    width: 185px;
+    box-shadow: 1px 1px 100px white;
+    transition-delay: 0.05s;
+}
+.blue-anime-button:hover{
+    box-shadow: 1px 2px 60px #4a69bd;
+    transition-delay: 0.05s;
+}
+.red-anime-button:hover{
+    box-shadow: 1px 2px 60px #ff7979;
+    transition-delay: 0.05s;
+}
+.green-anime-button:hover{
+    box-shadow: 1px 2px 60px #009432;
+    transition-delay: 0.05s;
+}
+.anime-synopsis{
+    padding-top: 20px;
+    padding-left: 15px;
+}
+.anime-info{
+    padding-top: 8px;
+}
+
+
+@media screen and (max-width: 1400px) /* Desktop */ {
+   .anime-list{
+        padding-top: 55%;
+    }
+}
+@media screen  and (max-width: 979px) /* Tablet */ {
+    .collapse{
+        padding-right: 0px;
+    }
+    .nav-item{
+        padding: 10px 0 0 0;
+    }
+    #my-name{
+        width: 300px !important;
+        height: 60px !important;
+    }
+    #my-logo{
+        width: 220px;
+        height: 120px !important;
+    }
+    .anime-list{
+        padding-top: 70%;
+    }
+}
+
+@media screen  and (max-width: 750px) {
+   #my-name{
+        width: 300px !important;
+        height: 60px !important;
+    }
+    #my-logo{
+        width: 220px;
+        height: 120px !important;
+    }
+    .anime-list{
+        padding-top: 100%;
+    }
+}
+@media screen and (max-width: 500px) /* Mobile */ {
+    #my-name{
+        width: 200px !important;
+        height: 40px !important;
+    }
+    #my-logo{
+        width: 200px;
+        height: 110px !important;
+    }
+    .anime-list{
+        padding-top: 130%;
+    }
+}
