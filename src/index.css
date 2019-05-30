@@ -1,15 +1,18 @@
 body {
   margin: 0;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black !important;
+  color: white !important;
+
 }
 
 code {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
 }
 .list-text{
-  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-family: Verdana,Geneva,sans-serif; 
   font-size: 20px;
 }
 /* 
@@ -24,7 +27,6 @@ App.js
 Navbar.js 
 ***************************************************************
 */
-
 .outer{
   height: 100%;
 }
@@ -42,6 +44,9 @@ Navbar.js
 .list-item{
   padding: 25px 20px !important;
 }
+.list-text{
+  padding-left: 18px;
+}
 .nav-link-item {
   color: inherit;
   text-decoration: none;
@@ -54,39 +59,45 @@ Navbar.js
 .nav-link-item.active {
   color: green;
 }
-.userName{
-  padding-left: 25px;
+.userProfileImg{
+  margin-left: -5px;
 }
-.fa-angle-double-right{
-  font-size: 50px;
-  animation: arrowBlink 3s infinite linear;
+.userName{
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.toggle-arrow{
+  font-size: 55px;
+  animation: arrowBlink 2.5s infinite linear;
 }
 .logo-navbar{
+  padding-left: 60px;
   position: fixed;
+  height: auto;
+  width: auto;
 }
 @keyframes arrowBlink {
   0% {
     color: black;
   }
   50% {
-    color: #d1ccc0;
+    color: #ced6e0;
   }
   100%{
     color: black;
   }
 }
 .anime-image{
-  height: 240px;
-  width: 175px; 
+  height: 275px;
+  width: 200px; 
 }
 .anime-image:hover{
-  height: 255px;
-  width: 185px;
-  box-shadow: 1px 1px 100px white;
+  /* make it so hovering over pops up a small sypnosis box */
+  
   transition-delay: 0.05s;
 }
 .blue-anime-button:hover{
-  box-shadow: 1px 2px 60px #4a69bd;
+  box-shadow: 1px 2px 20px #4a69bd;
   transition-delay: 0.05s;
 }
 .anime-card {
@@ -107,8 +118,36 @@ Navbar.js
 Dashboard.js 
 ***************************************************************
 */
+.dashboard-page{
+  padding-right: 10px;
+}
+.search-box{
+  transform: translateX(18%);
+}
+.anime-input{
+  width: 35em !important;
+}
+.anime-list{
+  
+}
+.anime-card{
+  padding: 20px;
+}
 
-
+/* 
+***************************************************************
+AnimeInfo.js 
+***************************************************************
+*/
+.anime-info{
+  list-style-type: none;
+}
+.anime-info li{
+  padding-top: 10px;
+}
+.anime-synopsis{
+  padding: 30px 0 0 15px;
+}
 
 /* 
 ***************************************************************
@@ -121,4 +160,52 @@ Search.js
 .fa-search{
   font-size: 25px;
   padding-left: 8px;
+}
+
+/* 
+***************************************************************
+Media Queries
+***************************************************************
+*/
+@media screen and (max-width: 1400px) /* Desktop */ {
+  .anime-input{
+    width: 30em !important;
+  }
+  .dashboard-page{
+    padding-left: 60px;
+  }
+  .anime-list{
+    padding-left: 70px;
+  }
+}
+@media screen  and (max-width: 990px) /* Tablet */ {
+  .anime-input{
+    width: 18em !important;
+  }
+  .dashboard-page{
+    padding-left: 70px;
+  }
+  .anime-list{
+    padding-left: 70px;
+  }
+}
+@media screen  and (max-width: 770px) {
+  .search-box{
+    transform: translateX(10%);
+  }
+}
+@media screen and (max-width: 575px) /* Mobile */ {
+  .anime-input{
+    width: 6em !important;
+  }
+  .search-box{
+    transform: translateX(35%);
+  }
+  .anime-list{
+    padding-left: 80px;
+  }
+  .toggle-arrow{
+    position: absolute;
+    right: 15%;
+  }
 }

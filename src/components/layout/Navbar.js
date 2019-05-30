@@ -1,69 +1,109 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
+import clsx from 'clsx';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-
-const useStyles = makeStyles({
-  list: {
-    width: 250,
+// referenced mini drawer from material-ui
+const drawerWidth = 300;
+const useStyles = makeStyles(theme => ({
+  root: {
+    display: 'flex',
   },
-  fullList: {
-    width: 'auto',
+  menuButton: {
+    marginRight: 36,
   },
-});
+  hide: {
+    display: 'none',
+  },
+  drawer: {
+    width: drawerWidth,
+    flexShrink: 0,
+    whiteSpace: 'nowrap',
+  },
+  drawerOpen: {
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerClose: {
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    overflowX: 'hidden',
+    width: theme.spacing(7) + 1,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9) + 1,
+    },
+  },
+  toolbar: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  },
+  content: {
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+}));
 
 function Navbar() {
   const classes = useStyles();
-  const [state, setState] = React.useState({
-    left: false,
-  });
+  const [open, setOpen] = React.useState(false);
 
-  const toggleDrawer = (side, open) => event => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
+  function handleDrawerToggle() {
+    if (open) {
+      setOpen(false);
+    } else {
+      setOpen(true);
     }
-
-    setState({ ...state, [side]: open });
-  };
-
-  const sideList = side => (
-    <div
-      className={classes.list}
-      role="presentation"
-      onClick={toggleDrawer(side, false)}
-      onKeyDown={toggleDrawer(side, false)}
-    >
-        <List>
-            <SignedInLinks />
-            <SignedOutLinks />
-        </List>
-      
-    </div>
-  );
-  
+  }
   return (
-    <div className="my-side-navbar">
-        <div className="outer">
-            <div className="logo-navbar">
-                <List className="toggle-arrow">
-                    <ListItem>
-                        <Button onClick={toggleDrawer('left', true)} className="navbar-toggle-button"><i className="fas fa-angle-double-right"></i></Button>
-                    </ListItem>
-                </List>
-            </div>
+    <div className={classes.root}>
+      <CssBaseline />
+      <Drawer
+        variant="permanent"
+        className={clsx(classes.drawer, {
+          [classes.drawerOpen]: open,
+          [classes.drawerClose]: !open,
+        })}
+        classes={{
+          paper: clsx({
+            [classes.drawerOpen]: open,
+            [classes.drawerClose]: !open,
+          }),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbar} >
+          <div className="toggle-navbar-button">
+            <IconButton onClick={handleDrawerToggle}>
+              {open === false ? <ChevronRightIcon className="toggle-arrow" /> : <ChevronLeftIcon className="toggle-arrow" />}
+            </IconButton>
+          </div>
         </div>
-        <nav className="navbar">
-            <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
-                {sideList('left')}
-            </Drawer>
-        </nav>
-    </div>
+        <Divider />
+        <List>
+          <SignedInLinks />
+          <SignedOutLinks />
+        </List>
+      </Drawer>
+
+    </div >
   );
+
 }
 
 export default Navbar
