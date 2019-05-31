@@ -27,15 +27,20 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
+
   },
   drawerOpen: {
     width: drawerWidth,
+    background: '#2f3542',
+    color: 'white',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
   },
   drawerClose: {
+    background: '#2f3542',
+    color: 'white',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -61,6 +66,7 @@ const useStyles = makeStyles(theme => ({
 
 function Navbar() {
   const classes = useStyles();
+  // const className = thisStyles();
   const [open, setOpen] = React.useState(false);
 
   function handleDrawerToggle() {

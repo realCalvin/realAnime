@@ -5,6 +5,8 @@ import axios from 'axios';
 import Search from './Search'
 //import { Row } from 'react-bootstrap';
 import AnimeList from './AnimeList.js'
+import logo from '../img/logo.png'
+import name from '../img/name.png'
 
 class Dashboard extends Component {
     state = {
@@ -55,7 +57,11 @@ class Dashboard extends Component {
         return (
             <div className="dashboard-page">
                 <div className="container search-box">
-                    <div className="row">
+                    <div className="row dashboard-items">
+                        <ul className="dashboard-logo-name">
+                            <li><img className="dashboard-logo" src={logo} alt="website-logo" /></li>
+                            <li><img className="dashboard-name" src={name} alt="website-name" /></li>
+                        </ul>
                         <Search handleSubmit={this.handleSubmit} />
                     </div>
                 </div>

@@ -66,9 +66,9 @@ class AnimeInfo extends Component {
 						<h5>Synopsis</h5>
 						<p>{anime.synopsis}</p>
 						<hr />
-						<NavLink exact to="/" className="red-anime-button btn btn-danger btn-sm">Back</NavLink>
-						<a href={anime.url} className="blue-anime-button btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
-						<NavLink to="#" className="green-anime-button btn btn-success btn-sm">Subscribe</NavLink>
+						<NavLink exact to="/" className="nav-anime-btn btn btn-danger btn-sm">Back</NavLink>
+						<a href={anime.url} className="nav-anime-btn btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
+						<NavLink to="#" className="nav-anime-btn btn btn-success btn-sm">Subscribe</NavLink>
 					</div>
 				</Row>
 			</div>

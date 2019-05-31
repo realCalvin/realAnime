@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Dashboard from './components/info/Dashboard'
 import AnimeInfo from './components/info/AnimeInfo'
+import SignIn from './components/auth/SignIn'
+import SignUp from './components/auth/SignUp'
 
 function App() {
 
@@ -13,6 +15,8 @@ function App() {
         <Switch>
           <Route exact path='/' component={Dashboard} />
           <Route path='/anime/:id' component={AnimeInfo} />
+          <Route path='/login' component={SignIn} />
+          <Route path='/register' component={SignUp} />
         </Switch>
       </div>
     </BrowserRouter>
