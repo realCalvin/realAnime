@@ -69,7 +69,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div id="video-container">
-                    <video id="dashboard-background" autoPlay loop muted controls>
+                    <video id="dashboard-background" autoPlay loop controls muted>
                         <source src={background} type="video/mp4" />
                     </video>
                 </div>
