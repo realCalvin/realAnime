@@ -26,40 +26,31 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="container form-box">
-                <form onSubmit={this.handleSubmit} className="signin-form">
-                    <h3>Sign Up</h3>
-                    <div className="form-group row">
-                        <div className="col-md-7 col-sm-7">
-                            <input type="text" className="form-control" id="firstName" placeholder="First Name" onChange={this.handleChange}></input>
+            <div className="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title" id="registerLabel">Register</h4>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <form id="login-form">
+                                <h6>Email: </h6>
+                                <input type="email" name="email" className="form-control center-block" placeholder="Your Email" required /><br />
+                                <h6>Password: </h6>
+                                <input type="password" name="password" className="form-control center-block" placeholder="Your Password" required />
+                                <br />
+                                <h6>Phone Number: </h6>
+                                <input type="text" name="phone" className="form-control center-block" placeholder="Optional" />
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button type="submit" className="btn btn-primary form-control center-block" id="register-submit">Register</button>
                         </div>
                     </div>
-                    <div className="form-group row">
-                        <div className="col-md-7 col-sm-7">
-                            <input type="text" className="form-control" id="lastName" placeholder="Last Name" onChange={this.handleChange}></input>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-md-7 col-sm-7">
-                            <input type="email" className="form-control" id="email" placeholder="Email" onChange={this.handleChange}></input>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-md-7 col-sm-7">
-                            <input type="password" className="form-control" id="password" placeholder="Password" onChange={this.handleChange}></input>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-md-7 col-sm-7">
-                            <input type="tel" className="form-control" id="phone" placeholder="Phone (Optional)" onChange={this.handleChange}></input>
-                        </div>
-                    </div>
-                    <div className="form-group row">
-                        <div className="col-sm-10">
-                            <button type="submit" value="Submit" className="btn btn-sm btn-primary">Sign Up</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
             </div>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
 import { Row } from 'react-bootstrap';
+import $ from 'jquery';
 
 class AnimeList extends Component {
     render() {
@@ -9,6 +10,8 @@ class AnimeList extends Component {
         if (this.props.output !== null && this.props.output.length > 0) {
             const myAnimeList = animeList.map(anime => {
                 const animeLink = "/anime/" + anime.mal_id;
+                $('#my-dashboard').css('height', 'auto');
+                $('.dashboard-items').css('transform', 'translate(-1%,156%)');
                 return (
                     <div className="col-xs-12 col-sm-6 col-lg-4 col-xl-3 anime-card" key={anime.mal_id}>
                         <div className="well text-center">

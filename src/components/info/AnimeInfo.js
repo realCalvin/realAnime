@@ -43,7 +43,7 @@ class AnimeInfo extends Component {
 		const { aired } = this.state;
 		console.log(anime)
 		return (
-			<div className="container anime-list">
+			<div className="container selected-anime">
 				<Row>
 					<div className="col-md-4">
 						<img src={anime.image_url} className="anime-image" alt={anime.title}></img>

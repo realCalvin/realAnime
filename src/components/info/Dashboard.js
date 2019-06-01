@@ -5,6 +5,7 @@ import axios from 'axios';
 import Search from './Search'
 //import { Row } from 'react-bootstrap';
 import AnimeList from './AnimeList.js'
+import background from '../img/background.mp4'
 import logo from '../img/logo.png'
 import name from '../img/name.png'
 
@@ -55,18 +56,24 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="dashboard-page">
-                <div className="container search-box">
-                    <div className="row dashboard-items">
-                        <ul className="dashboard-logo-name">
-                            <li><img className="dashboard-logo" src={logo} alt="website-logo" /></li>
-                            <li><img className="dashboard-name" src={name} alt="website-name" /></li>
-                        </ul>
-                        <Search handleSubmit={this.handleSubmit} />
+            <div id="my-dashboard">
+                <div className="dashboard-page">
+                    <div className="container search-box">
+                        <div className="row dashboard-items">
+                            <ul className="dashboard-logo-name">
+                                <li><img className="dashboard-logo" src={logo} alt="website-logo" /></li>
+                            </ul>
+                            <Search handleSubmit={this.handleSubmit} />
+                        </div>
+                    </div>
+                    <div className="container anime-list">
+                        <AnimeList output={this.state.output} />
                     </div>
                 </div>
-                <div className="container anime-list">
-                    <AnimeList output={this.state.output} />
+                <div id="video-container">
+                    <video id="dashboard-background" autoPlay loop muted>
+                        <source src={background} type="video/mp4" />
+                    </video>
                 </div>
             </div>
         )

@@ -27,7 +27,7 @@ Navbar.js
 ***************************************************************
 */
 .outer{
-  height: 100%;
+  height: 100vh;
 }
 .logo-navbar{
   width: 50%;
@@ -117,14 +117,28 @@ Navbar.js
 Dashboard.js 
 ***************************************************************
 */
+#my-dashboard{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#video-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 .dashboard-page{
   padding-right: 10px;
+  z-index: 1;
 }
 .dashboard-items{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  transform: translateY(80%);
+  transform: translate(-5%,30%);
 }
 .dashboard-logo-name{
   list-style: none;
@@ -134,7 +148,7 @@ Dashboard.js
   margin-left: auto;
   margin-right: auto;
   width: 30%;
-  transform: translateX(-75%);
+  transform: translateX(-60%);
 }
 .dashboard-name{
   display: block;
@@ -147,6 +161,7 @@ Dashboard.js
   transform: translateX(18%);
 }
 .anime-list{
+  margin-top: 10%;
   transform: translateY(5%);
 }
 .anime-input{
@@ -161,7 +176,7 @@ Dashboard.js
 AnimeInfo.js 
 ***************************************************************
 */
-.anime-list{
+.selected-anime{
   padding-top: 5%;
 }
 .anime-info{
@@ -187,18 +202,22 @@ Search.js
 }
 /* 
 ***************************************************************
-SignIn.js 
+Authentication
 ***************************************************************
 */
-.form-box{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: 0;
-  transform: translate(-50%, -50%);
+.auth-btn{
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
-.signin-form{
-  transform: translateX(25%);
+.modal{
+  margin-top: 5em;
+  opacity: 0.9;
+  color: black;
 }
 
 /* 
@@ -213,7 +232,7 @@ Media Queries
   .dashboard-page{
     padding-left: 60px;
   }
-  .anime-list{
+  .selected-anime{
     padding-left: 70px;
   }
 }
@@ -232,7 +251,7 @@ Media Queries
     width: 60%;
     transform: translateX(-35%);
   }
-  .anime-list{
+  .selected-anime{
     padding-left: 70px;
     transform: translateY(2%);
   }
@@ -269,8 +288,8 @@ Media Queries
     transform: translateX(12%);
   }
   .anime-list{
-    padding-left: 30px;
-    transform: translateY(1%);
+    padding-left: 0px;
+    transform: translateY(2%);
   }
   .toggle-arrow{
     position: absolute;

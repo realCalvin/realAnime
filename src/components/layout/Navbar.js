@@ -31,7 +31,8 @@ const useStyles = makeStyles(theme => ({
   },
   drawerOpen: {
     width: drawerWidth,
-    background: '#2f3542',
+    background: 'rgba(0, 0, 0, 0.3)',
+    border: 'none',
     color: 'white',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
@@ -39,7 +40,8 @@ const useStyles = makeStyles(theme => ({
     }),
   },
   drawerClose: {
-    background: '#2f3542',
+    background: 'transparent',
+    border: 'none',
     color: 'white',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
