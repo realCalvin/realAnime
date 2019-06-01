@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Navbar />
         <Switch>
-          <Route exact path='/' component={Dashboard} />
+          <Route exact path='/anime' component={Dashboard} />
           <Route path='/anime/:id' component={AnimeInfo} />
           <Route path='/register' component={SignUp} />
         </Switch>

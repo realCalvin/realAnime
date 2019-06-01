@@ -13,7 +13,7 @@ const SignedInLinks = () => {
             </MenuItem>
             <Divider />
             <MenuItem button key="home" className="list-item">
-                <NavLink exact to="/" className="nav-link-item"><i className="fas fa-home">&nbsp; <span className="list-text">Home</span></i></NavLink>
+                <NavLink exact to="/anime" className="nav-link-item"><i className="fas fa-home">&nbsp; <span className="list-text">Home</span></i></NavLink>
             </MenuItem>
             <Divider />
             <MenuItem button key="account" className="list-item">
