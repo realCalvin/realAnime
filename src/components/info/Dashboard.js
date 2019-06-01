@@ -3,11 +3,9 @@ import React, { Component } from 'react';
 import $ from 'jquery';
 import axios from 'axios';
 import Search from './Search'
-//import { Row } from 'react-bootstrap';
 import AnimeList from './AnimeList.js'
 import background from '../img/background.mp4'
 import logo from '../img/logo.png'
-import name from '../img/name.png'
 
 class Dashboard extends Component {
     state = {
@@ -71,7 +69,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
                 <div id="video-container">
-                    <video id="dashboard-background" autoPlay loop muted>
+                    <video id="dashboard-background" autoPlay loop muted controls>
                         <source src={background} type="video/mp4" />
                     </video>
                 </div>

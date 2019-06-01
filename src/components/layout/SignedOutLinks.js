@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
 import Divider from '@material-ui/core/Divider';
 import MenuItem from '@material-ui/core/ListItem';
 import SignIn from '../auth/SignIn'

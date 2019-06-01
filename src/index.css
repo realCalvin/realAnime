@@ -278,14 +278,14 @@ Media Queries
   }
   .dashboard-logo{
     width: 70%;
-    transform: translateX(-30%);
+    transform: translateX(-20%);
   }
   .dashboard-name{
     width: 100%;
     transform: translateX(-20%);
   }
   .search-box{
-    transform: translateX(12%);
+    transform: translateX(5%);
   }
   .anime-list{
     padding-left: 0px;
@@ -296,6 +296,14 @@ Media Queries
     right: 15%;
   }
   .form-control{
-    width: 8em !important;
+    width: 13em !important;
+  }
+}
+
+@media screen and (max-width: 468px) /* smaller mobile */ {
+  #search-btn{
+    position: absolute;
+    left: 220px;
+    bottom: 1px;
   }
 }
