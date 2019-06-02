@@ -10,6 +10,9 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import MenuItem from '@material-ui/core/ListItem';
+import kiminonawa from '../audio/kiminonawa.mp3'
+
 
 // referenced mini drawer from material-ui
 const drawerWidth = 300;
@@ -27,11 +30,10 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     flexShrink: 0,
     whiteSpace: 'nowrap',
-
   },
   drawerOpen: {
     width: drawerWidth,
-    background: 'rgba(0, 0, 0, 0.3)',
+    background: 'rgba(0, 0, 0, 0.25)',
     border: 'none',
     color: 'white',
     transition: theme.transitions.create('width', {
@@ -67,9 +69,20 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function Navbar() {
+
   const classes = useStyles();
   // const className = thisStyles();
   const [open, setOpen] = React.useState(false);
+  let play = false;
+  function handlePlay() {
+    var song = document.getElementById('anime-song');
+    play = !play;
+    if (play) {
+      song.play();
+    } else {
+      song.pause();
+    }
+  }
 
   function handleDrawerToggle() {
     if (open) {
@@ -106,6 +119,15 @@ function Navbar() {
         <List>
           <SignedInLinks />
           <SignedOutLinks />
+          <MenuItem button key="home" className="list-item">
+            <button className="auth-btn nav-link-item" onClick={handlePlay}>
+              <div id="toggle-play">
+                <i className="fas fa-play">&nbsp; <span className="list-text"><audio id="anime-song" src={kiminonawa} controls /></span></i>
+              </div>
+            </button>
+          </MenuItem>
+
+          <Divider />
         </List>
       </Drawer>
 

@@ -5,10 +5,9 @@ class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            password: '',
-            firstName: '',
-            lastName: '',
+            emailsignup: '',
+            passwordsignup: '',
+            name: '',
             phone: ''
         }
     }
@@ -26,7 +25,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal sign-modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
@@ -36,18 +35,20 @@ class SignUp extends Component {
                             </button>
                         </div>
                         <div className="modal-body">
-                            <form id="login-form">
+                            <form className="login-form" onSubmit={this.handleSubmit}>
+                                <h6>Name: </h6>
+                                <input type="text" name="name" id="name" className="form-control center-block" placeholder="Your Name" onChange={this.handleChange} required /><br />
                                 <h6>Email: </h6>
-                                <input type="email" name="email" className="form-control center-block" placeholder="Your Email" required /><br />
+                                <input type="email" name="email" id="emailsignup" className="form-control center-block" placeholder="Your Email" onChange={this.handleChange} required /><br />
                                 <h6>Password: </h6>
-                                <input type="password" name="password" className="form-control center-block" placeholder="Your Password" required />
+                                <input type="password" name="password" id="passwordsignup" className="form-control center-block" placeholder="Your Password" onChange={this.handleChange} required />
                                 <br />
                                 <h6>Phone Number: </h6>
-                                <input type="text" name="phone" className="form-control center-block" placeholder="Optional" />
+                                <input type="text" name="phone" id="phone" className="form-control center-block" placeholder="Optional" onChange={this.handleChange} />
+                                <div className="modal-footer">
+                                    <button type="submit" className="btn btn-primary form-control center-block" id="register-submit" >Register</button>
+                                </div>
                             </form>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="submit" className="btn btn-primary form-control center-block" id="register-submit">Register</button>
                         </div>
                     </div>
                 </div>

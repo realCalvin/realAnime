@@ -5,7 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: black !important;
   color: white !important;
-
+  overflow-x: hidden;
 }
 code {
   font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif; 
@@ -111,6 +111,11 @@ Navbar.js
 #animes h6{
 	margin-top: 10px;
 }
+#anime-song{
+  padding: 5px 0 0 5px;
+  height: 30px;
+  width: 210px;
+}
 
 /* 
 ***************************************************************
@@ -126,9 +131,17 @@ Dashboard.js
 }
 #video-container{
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 0%;
   width: 100%;
+  height: 100%;
+}
+video{
+  height: 110%;
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+  object-fit: cover;
 }
 .dashboard-page{
   padding-right: 10px;
@@ -216,8 +229,14 @@ Authentication
 }
 .modal{
   margin-top: 5em;
-  opacity: 0.9;
+  opacity: 1;
   color: black;
+}
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]){
+  border-color: #eb3b5a;
+  box-shadow: none;
 }
 
 /* 
@@ -278,18 +297,18 @@ Media Queries
   }
   .dashboard-logo{
     width: 70%;
-    transform: translateX(-20%);
+    transform: translateX(-25%);
   }
   .dashboard-name{
     width: 100%;
-    transform: translateX(-20%);
+    transform: translateX(-15%);
   }
   .search-box{
     transform: translateX(5%);
   }
   .anime-list{
-    padding-left: 0px;
-    transform: translateY(2%);
+    padding-left: 10px;
+    transform: translate(-6%,2%);
   }
   .toggle-arrow{
     position: absolute;
@@ -305,5 +324,8 @@ Media Queries
     position: absolute;
     left: 220px;
     bottom: 1px;
+  }
+  .anime-list{
+    transform: translate(3%,2%);
   }
 }

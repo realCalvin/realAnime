@@ -55,8 +55,8 @@ class Dashboard extends Component {
     render() {
         return (
             <div id="my-dashboard">
-                <div className="dashboard-page">
-                    <div className="container search-box">
+                <div className="container dashboard-page">
+                    <div className="search-box">
                         <div className="row dashboard-items">
                             <ul className="dashboard-logo-name">
                                 <li><img className="dashboard-logo" src={logo} alt="website-logo" /></li>
@@ -64,7 +64,7 @@ class Dashboard extends Component {
                             <Search handleSubmit={this.handleSubmit} />
                         </div>
                     </div>
-                    <div className="container anime-list">
+                    <div className="anime-list">
                         <AnimeList output={this.state.output} />
                     </div>
                 </div>

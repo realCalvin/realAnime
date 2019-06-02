@@ -24,6 +24,7 @@ const SignedInLinks = () => {
                 <NavLink to="#" className="nav-link-item"><i className="fas fa-cog">&nbsp; <span className="list-text">Settings</span></i></NavLink>
             </MenuItem>
             <Divider />
+            
         </div>
     )
 }
