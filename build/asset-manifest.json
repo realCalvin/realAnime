@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/anime/static/css/main.8f40d417.chunk.css",
+    "main.js": "/anime/static/js/main.556dc62f.chunk.js",
+    "main.js.map": "/anime/static/js/main.556dc62f.chunk.js.map",
+    "runtime~main.js": "/anime/static/js/runtime~main.839a7f3c.js",
+    "runtime~main.js.map": "/anime/static/js/runtime~main.839a7f3c.js.map",
+    "static/js/2.e22f295a.chunk.js": "/anime/static/js/2.e22f295a.chunk.js",
+    "static/js/2.e22f295a.chunk.js.map": "/anime/static/js/2.e22f295a.chunk.js.map",
+    "index.html": "/anime/index.html",
+    "precache-manifest.03362a1c72adf9b29f257f4162ee94dd.js": "/anime/precache-manifest.03362a1c72adf9b29f257f4162ee94dd.js",
+    "service-worker.js": "/anime/service-worker.js",
+    "static/css/main.8f40d417.chunk.css.map": "/anime/static/css/main.8f40d417.chunk.css.map",
+    "static/media/background.mp4": "/anime/static/media/background.1a6dc16b.mp4",
+    "static/media/kiminonawa.mp3": "/anime/static/media/kiminonawa.201f2e5d.mp3",
+    "static/media/logo.png": "/anime/static/media/logo.0e5719ee.png",
+    "static/media/user.png": "/anime/static/media/user.b6681619.png"
+  }
+}
