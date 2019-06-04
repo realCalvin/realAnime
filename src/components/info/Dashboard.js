@@ -7,6 +7,7 @@ import AnimeList from './AnimeList.js'
 import background from '../img/background.mp4'
 import logo from '../img/logo.png'
 
+
 class Dashboard extends Component {
     state = {
         title: null,

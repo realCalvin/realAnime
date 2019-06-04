@@ -20,7 +20,6 @@ App.js
 ***************************************************************
 */
 
-
 /* 
 ***************************************************************
 Navbar.js 
@@ -85,36 +84,6 @@ Navbar.js
   100%{
     color: rgb(97, 96, 96);
   }
-}
-.anime-image{
-  height: 275px;
-  width: 200px; 
-}
-.anime-image:hover{
-  /* make it so hovering over pops up a small sypnosis box */
-  
-  transition-delay: 0.05s;
-}
-.blue-anime-button:hover{
-  box-shadow: 1px 2px 20px #4a69bd;
-  transition-delay: 0.05s;
-}
-.anime-card {
-	padding: 5px;
-}
-#animes .col-md-3 .well{
-	height: 420px;
-}
-#animes a{
-	margin-top: 10px;
-}
-#animes h6{
-	margin-top: 10px;
-}
-#anime-song{
-  padding: 5px 0 0 5px;
-  height: 30px;
-  width: 210px;
 }
 
 /* 
@@ -183,17 +152,56 @@ video{
 .anime-card{
   padding: 20px;
 }
-
-/* 
-***************************************************************
-AnimeInfo.js 
-***************************************************************
-*/
+.modal-backdrop {
+  z-index: -1;
+}
+.anime-modal-content {
+  position: relative;
+  padding: 20px;
+  height: 800px;
+  overflow-y: scroll;
+}
+.wrapper{
+  position: relative;
+}
+#animeModal{
+  position: absolute;
+}
+.anime-image{
+  height: 275px;
+  width: 200px; 
+}
+.anime-image:hover{
+  /* make it so hovering over pops up a small sypnosis box */
+  transition-delay: 0.05s;
+}
+.blue-anime-button:hover{
+  box-shadow: 1px 2px 20px #4a69bd;
+  transition-delay: 0.05s;
+}
+.anime-card {
+	padding: 5px;
+}
+#animes .col-md-3 .well{
+	height: 420px;
+}
+#animes a{
+	margin-top: 10px;
+}
+#animes h6{
+	margin-top: 10px;
+}
+#anime-song{
+  padding: 5px 0 0 5px;
+  height: 30px;
+  width: 210px;
+}
 .selected-anime{
   padding-top: 5%;
 }
 .anime-info{
   list-style-type: none;
+  padding-left: 45px !important;
 }
 .anime-info li{
   padding-top: 10px;
