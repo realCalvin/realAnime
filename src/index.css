@@ -233,7 +233,7 @@ Authentication
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
-	outline: inherit;
+  outline: inherit;
 }
 .modal{
   margin-top: 5em;
@@ -245,6 +245,24 @@ input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]){
   border-color: #eb3b5a;
   box-shadow: none;
+}
+.sign-in-up-btn{
+  font-size: 25px;
+}
+.sign-in-up-btn:hover{
+  font-size: 27px;
+  color: rgb(250, 141, 141);
+}
+.auth-selected-btn{
+  border: black 1.5px solid;
+  border-radius: 10px;
+  padding: 5px 15px;
+  animation: auth-btns 3s infinite;
+}
+@keyframes auth-btns{
+  0%{border-color: black;}
+  50%{border-color: rgb(206, 195, 195);}
+  100%{border-color: black;}
 }
 
 /* 

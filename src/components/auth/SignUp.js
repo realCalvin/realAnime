@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Firebase from '../../config/Firebase'
 
 class SignUp extends Component {
 
@@ -14,13 +15,15 @@ class SignUp extends Component {
 
     handleChange = (e) => {
         this.setState({
-            [e.target.id]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(this.state)
+    register = (e) => {
+        Firebase.auth().createUserWithEmailAndPassword(this.state.emailsignup, this.state.passwordsignup)
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     render() {
@@ -29,24 +32,24 @@ class SignUp extends Component {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h4 className="modal-title" id="registerLabel">Register</h4>
+                            <h4 className="modal-title" id="registerLabel"><button className="btn btn-sm sign-in-up-btn" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button> <button className="btn btn-sm auth-selected-btn sign-in-up-btn">Register</button></h4>
                             <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div className="modal-body">
-                            <form className="login-form" onSubmit={this.handleSubmit}>
+                            <form className="login-form" onSubmit={this.register}>
                                 <h6>Name: </h6>
-                                <input type="text" name="name" id="name" className="form-control center-block" placeholder="Your Name" onChange={this.handleChange} required /><br />
+                                <input type="text" name="name" className="form-control center-block" placeholder="Your Name" onChange={this.handleChange} required /><br />
                                 <h6>Email: </h6>
-                                <input type="email" name="email" id="emailsignup" className="form-control center-block" placeholder="Your Email" onChange={this.handleChange} required /><br />
+                                <input type="email" name="emailsignup" className="form-control center-block" placeholder="Your Email" onChange={this.handleChange} required /><br />
                                 <h6>Password: </h6>
-                                <input type="password" name="password" id="passwordsignup" className="form-control center-block" placeholder="Your Password" onChange={this.handleChange} required />
+                                <input type="password" name="passwordsignup" className="form-control center-block" placeholder="Your Password" onChange={this.handleChange} required />
                                 <br />
                                 <h6>Phone Number: </h6>
-                                <input type="text" name="phone" id="phone" className="form-control center-block" placeholder="Optional" onChange={this.handleChange} />
+                                <input type="text" name="phone" className="form-control center-block" placeholder="Optional" onChange={this.handleChange} />
                                 <div className="modal-footer">
-                                    <button type="submit" className="btn btn-primary form-control center-block" id="register-submit" >Register</button>
+                                    <button type="submit" className="btn btn-primary form-control center-block" >Register</button>
                                 </div>
                             </form>
                         </div>

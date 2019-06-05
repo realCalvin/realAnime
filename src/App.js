@@ -1,22 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Dashboard from './components/info/Dashboard'
-import SignUp from './components/auth/SignUp'
+import Firebase from './config/Firebase'
 
-function App() {
+class App extends Component {
 
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path='/' component={Dashboard} />
-          <Route path='/register' component={SignUp} />
-        </Switch>
-      </div>
-    </BrowserRouter>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {},
+    }
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    Firebase.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
+
+  render() {
+    return (
+      <BrowserRouter>
+        <div className="App">
+          <Navbar user={this.state.user} />
+          <Switch>
+            <Route exact path='/' component={Dashboard} />
+          </Switch>
+        </div>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
