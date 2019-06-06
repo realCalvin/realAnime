@@ -152,8 +152,9 @@ video{
 .anime-card{
   padding: 20px;
 }
-.modal-backdrop {
-  z-index: -1;
+.modal-backdrop
+{
+  z-index: -999;
 }
 .anime-modal-content {
   position: relative;
@@ -237,8 +238,10 @@ Authentication
 }
 .modal{
   margin-top: 5em;
-  opacity: 1;
   color: black;
+}
+.modal-open { 
+  overflow-y: auto; 
 }
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
@@ -249,19 +252,53 @@ input[type=password]:not(.browser-default):focus:not([readonly]){
 .sign-in-up-btn{
   font-size: 25px;
 }
+#modal-sign-in{
+  display: flex;
+  flex-wrap: wrap;
+}
+.google-auth-btn{
+  border: black solid 1px;
+}
+.facebook-auth-btn{
+  margin-top: 8px;
+  border: black solid 1px;
+}
+.google-auth-btn:hover{
+  
+  background-color: rgb(252, 222, 208);
+  border-color: rgb(255, 122, 60);
+}
+.facebook-auth-btn:hover{
+  background-color: rgb(191, 216, 255);
+  border-color: rgb(53, 130, 255);
+}
+.fa-google{
+  color: #dd4b39;
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+.fa-facebook-square{
+  color: #3b5998;
+  margin-right: 5px;
+  font-size: 1.4em;
+}
 .sign-in-up-btn:hover{
   font-size: 27px;
   color: rgb(250, 141, 141);
 }
 .auth-selected-btn{
-  border: black 1.5px solid;
-  border-radius: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: black 3px solid;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
   padding: 5px 15px;
-  animation: auth-btns 3s infinite;
+  animation: auth-btns 2.5s infinite;
 }
 @keyframes auth-btns{
   0%{border-color: black;}
-  50%{border-color: rgb(206, 195, 195);}
+  50%{border-color: rgb(165, 163, 163);}
   100%{border-color: black;}
 }
 
@@ -340,8 +377,21 @@ Media Queries
     position: absolute;
     right: 15%;
   }
-  .form-control{
+  #searchText{
     width: 13em !important;
+  }
+  .modal{
+    margin-top: 2em;
+  }
+  #modal-auth-sign-in{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  #login-submit{
+    margin-left: 8px;
+    margin-bottom: 10px;
   }
 }
 

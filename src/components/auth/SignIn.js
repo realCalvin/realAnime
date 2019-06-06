@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import Firebase from '../../config/Firebase'
+import firebase from '../../config/firebase'
 import SignUp from './SignUp'
+import $ from 'jquery'
 
 class SignIn extends Component {
 
@@ -16,7 +17,7 @@ class SignIn extends Component {
 
     login = (e) => {
         e.preventDefault();
-        Firebase.auth().signInWithEmailAndPassword(this.state.emaillogin, this.state.passwordlogin).then((u) => {
+        firebase.auth().signInWithEmailAndPassword(this.state.emaillogin, this.state.passwordlogin).then((u) => {
         }).catch((error) => {
             console.log(error);
         })
@@ -26,6 +27,38 @@ class SignIn extends Component {
         this.setState({
             [e.target.id]: e.target.value
         })
+    }
+
+    // check if device is mobile.. used to choose method for login (popup or redirect)
+    isMobile = () => {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
+    handleGoogleLogin = (e) => {
+        e.preventDefault();
+        console.log("GOOGLE")
+        var provider = new firebase.auth.GoogleAuthProvider();
+
+        if (this.isMobile()) { // mobile device; redirect page
+
+        } else { // normal device; popup page
+            firebase.auth().signInWithPopup(provider)
+                .then((result) => {
+                    // Google Access Token
+                    var token = result.credential.accessToken;
+                    // The signed-in user info.
+                    var user = result.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
+    }
+
+    handleFacebookLogin = (e) => {
+        e.preventDefault();
+        console.log("FACEBOOK")
     }
 
     render() {
@@ -47,9 +80,15 @@ class SignIn extends Component {
                                     <input type="email" name="email" id="emaillogin" className="form-control center-block" placeholder="Your Email" onChange={this.handleChange} required /><br />
                                     <h6>Password: </h6>
                                     <input type="password" name="password" id="passwordlogin" className="form-control center-block" placeholder="Your Password" onChange={this.handleChange} required />
-                                    <div className="modal-footer">
+                                    <div className="modal-footer" id="modal-auth-sign-in">
                                         <button type="submit" className="btn btn-primary form-control center-block" id="login-submit">Login</button>
                                         <button type="button" className="btn btn-secondary form-control center-block" id="login-forget">Forgot Password</button>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <div id="modal-sign-in">
+                                            <button type="button" onClick={this.handleGoogleLogin} className="btn google-auth-btn form-control center-block" id="login-google"><i className="fab fa-google"></i> Login with Google</button>
+                                            <button type="button" onClick={this.handleFacebookLogin} className="btn facebook-auth-btn  form-control center-block" id="login-facebook"><i className="fab fa-facebook-square"></i> Login with Facebook</button>
+                                        </div>
                                     </div>
                                 </form>
                             </div>

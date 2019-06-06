@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Firebase from '../../config/Firebase'
+import firebase from '../../config/firebase'
 
 class SignUp extends Component {
 
@@ -20,13 +20,40 @@ class SignUp extends Component {
     }
 
     register = (e) => {
-        Firebase.auth().createUserWithEmailAndPassword(this.state.emailsignup, this.state.passwordsignup)
+        e.preventDefault();
+        firebase.auth().createUserWithEmailAndPassword(this.state.emailsignup, this.state.passwordsignup)
+            .then((data) => {
+                data.user.sendEmailVerification();
+                alert("Account created. Verify your email if you would like to access our functionalities!")
+                console.log(data.user.uid);
+                data.user.updateProfile({
+                    displayName: this.state.name,
+                    phoneNumber: this.state.phone,
+                })
+
+            })
             .catch((error) => {
-                console.log(error);
+                switch (error.code) {
+                    case "auth/email-already-in-use":
+                        console.log("The new user account cannot be created because the email is already in use.");
+                        break;
+                    case "INVALID_EMAIL":
+                        console.log("The specified email is not a valid email.");
+                        break;
+                    default:
+                        console.log("Error creating user:", error);
+                }
             })
     }
 
     render() {
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+            } else {
+                // No user is signed in.
+            }
+        });
         return (
             <div className="modal sign-modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">

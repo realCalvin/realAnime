@@ -20,14 +20,7 @@ class AnimeList extends Component {
         this.setState({
             id: id
         })
-        var scrollPos = $(document).scrollTop() - 700;
-        $('#animeModal').css("top", scrollPos + "px");
-    }
-
-    componentDidUpdate() {
-        if (this.state.id != null) {
-            const animeID = this.state.id;
-            axios.get('https://api.jikan.moe/v3/anime/' + animeID)
+        axios.get('https://api.jikan.moe/v3/anime/' + id)
                 .then((response) => {
                     let anime = response.data;
                     let anime_genres = '';
@@ -37,6 +30,7 @@ class AnimeList extends Component {
                             anime_genres += ', '
                         }
                     }
+                    console.log(anime.title);
                     this.setState({
                         anime: anime,
                         anime_genres: anime_genres,
@@ -46,7 +40,8 @@ class AnimeList extends Component {
                 .catch((error) => {
                     console.log(error)
                 })
-        }
+        var scrollPos = $(document).scrollTop() - 700;
+        $('#animeModal').css("top", scrollPos + "px");
     }
 
     render() {

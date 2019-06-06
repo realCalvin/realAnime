@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Dashboard from './components/info/Dashboard'
-import Firebase from './config/Firebase'
+import firebase from './config/firebase'
 
 class App extends Component {
 
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   authListener() {
-    Firebase.auth().onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
       console.log(user);
       if (user) {
         this.setState({ user });

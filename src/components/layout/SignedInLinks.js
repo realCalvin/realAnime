@@ -4,11 +4,11 @@ import Avatar from '@material-ui/core/Avatar';
 import { UserPic } from './user.png'
 import Divider from '@material-ui/core/Divider';
 import MenuItem from '@material-ui/core/ListItem';
-import Firebase from '../../config/Firebase'
+import firebase from '../../config/firebase'
 
 const SignedInLinks = () => {
 
-    let user = Firebase.auth().currentUser;
+    let user = firebase.auth().currentUser;
     let name, photoUrl, emailVerified;
 
     if (user != null) {
@@ -18,7 +18,7 @@ const SignedInLinks = () => {
     }
 
     const logout = (e) => {
-        Firebase.auth().signOut();
+        firebase.auth().signOut();
     }
 
     return (
