@@ -154,7 +154,7 @@ video{
 }
 .modal-backdrop
 {
-  z-index: -999;
+    z-index: -999;
 }
 .anime-modal-content {
   position: relative;
