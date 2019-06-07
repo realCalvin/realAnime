@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import firebase from '../../config/firebase'
 import SignUp from './SignUp'
-import $ from 'jquery'
-
+import ForgotPassword from './ForgotPassword'
 class SignIn extends Component {
 
     constructor(props) {
@@ -20,6 +19,13 @@ class SignIn extends Component {
         firebase.auth().signInWithEmailAndPassword(this.state.emaillogin, this.state.passwordlogin).then((u) => {
         }).catch((error) => {
             console.log(error);
+            switch (error.code) {
+                case "auth/wrong-password":
+                    alert("Wrong password. Try again.");
+                    break;
+                default:
+                    alert(error);
+            }
         })
     }
 
@@ -36,35 +42,65 @@ class SignIn extends Component {
 
     handleGoogleLogin = (e) => {
         e.preventDefault();
-        console.log("GOOGLE")
         var provider = new firebase.auth.GoogleAuthProvider();
 
         if (this.isMobile()) { // mobile device; redirect page
-
-        } else { // normal device; popup page
-            firebase.auth().signInWithPopup(provider)
+            console.log("MOBILE");
+            firebase.auth().signInWithRedirect(provider)
                 .then((result) => {
-                    // Google Access Token
-                    var token = result.credential.accessToken;
                     // The signed-in user info.
                     var user = result.user;
                     console.log(user);
                 })
                 .catch((error) => {
-                    console.log(error);
+                    alert(error);
+                })
+        } else { // normal device; popup page
+            console.log("NOT MOBILE")
+            firebase.auth().signInWithPopup(provider)
+                .then((result) => {
+                    // The signed-in user info.
+                    var user = result.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    alert(error);
                 })
         }
     }
 
     handleFacebookLogin = (e) => {
         e.preventDefault();
-        console.log("FACEBOOK")
+        var provider = new firebase.auth.FacebookAuthProvider();
+
+        if (this.isMobile()) {
+            console.log("MOBILE");
+            firebase.auth().signInWithRedirect(provider)
+                .then((result) => {
+                    // The signed-in user info.
+                    var user = result.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    alert(error);
+                })
+        } else {
+            console.log("NOT MOBILE")
+            firebase.auth().signInWithPopup(provider)
+                .then((result) => {
+                    // The signed-in user info.
+                    var user = result.user;
+                    console.log(user);
+                })
+                .catch((error) => {
+                    alert(error);
+                })
+        }
     }
 
     render() {
         return (
             <div>
-
                 <div className="modal sign-modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -82,7 +118,7 @@ class SignIn extends Component {
                                     <input type="password" name="password" id="passwordlogin" className="form-control center-block" placeholder="Your Password" onChange={this.handleChange} required />
                                     <div className="modal-footer" id="modal-auth-sign-in">
                                         <button type="submit" className="btn btn-primary form-control center-block" id="login-submit">Login</button>
-                                        <button type="button" className="btn btn-secondary form-control center-block" id="login-forget">Forgot Password</button>
+                                        <button type="button" className="btn btn-secondary form-control center-block" data-dismiss="modal" data-toggle="modal" data-target="#forgotPasswordModal" id="password-forget">Forgot Password</button>
                                     </div>
                                     <div className="modal-footer">
                                         <div id="modal-sign-in">
@@ -95,7 +131,7 @@ class SignIn extends Component {
                         </div>
                     </div>
                 </div>
-
+                <ForgotPassword />
                 <SignUp />
 
             </div>
