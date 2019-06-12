@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import { Row } from 'react-bootstrap';
 import $ from 'jquery';
 import axios from 'axios'
+import firebase from '../../config/firebase'
 
 class AnimeList extends Component {
     constructor(props) {
@@ -21,25 +22,25 @@ class AnimeList extends Component {
             id: id
         })
         axios.get('https://api.jikan.moe/v3/anime/' + id)
-                .then((response) => {
-                    let anime = response.data;
-                    let anime_genres = '';
-                    for (var i = 0; i < anime.genres.length; i++) {
-                        anime_genres += anime.genres[i].name
-                        if (i !== anime.genres.length - 1) {
-                            anime_genres += ', '
-                        }
+            .then((response) => {
+                let anime = response.data;
+                let anime_genres = '';
+                for (var i = 0; i < anime.genres.length; i++) {
+                    anime_genres += anime.genres[i].name
+                    if (i !== anime.genres.length - 1) {
+                        anime_genres += ', '
                     }
-                    console.log(anime.title);
-                    this.setState({
-                        anime: anime,
-                        anime_genres: anime_genres,
-                        aired: anime.aired.string,
-                    })
+                }
+                console.log(anime.title);
+                this.setState({
+                    anime: anime,
+                    anime_genres: anime_genres,
+                    aired: anime.aired.string,
                 })
-                .catch((error) => {
-                    console.log(error)
-                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
         var scrollPos = $(document).scrollTop() - 700;
         $('#animeModal').css("top", scrollPos + "px");
     }

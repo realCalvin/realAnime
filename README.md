@@ -1,6 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Anime Project
 
-## Available Scripts
+Checklist:
+- [x] Functional Base UI
+- [X] API Call To Search Anime
+- [X] User Authentication
+- [ ] Store User's Subscribed Animes
+- [ ] Send Email/Text Notification On Latest Anime Updates
+- [ ] Redesign And Enhance UI/UX Experience
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
