@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { NavLink } from 'react-router-dom'
 import { Row } from 'react-bootstrap';
 import $ from 'jquery';
 import axios from 'axios'
 import firebase from '../../config/firebase'
+import 'firebase/firestore';
 
 class AnimeList extends Component {
     constructor(props) {
@@ -15,6 +16,24 @@ class AnimeList extends Component {
             aired: '',
             scrollPos: null,
         }
+    }
+
+    handleSubscribe = (id) => {
+        console.log(id);
+        var db = firebase.firestore();
+        $('#subscribe-notify').css("display", "block");
+        setTimeout(function () {
+            $('#subscribe-notify').css("display", "none");
+        }, 3000);
+        if (firebase.auth().currentUser !== null) {
+            // https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array
+            var userId = firebase.auth().currentUser.uid;
+            var userAdd = db.collection('users').doc(userId);
+            userAdd.update({
+                animeIds: firebase.firestore.FieldValue.arrayUnion(id)
+            });
+        }
+
     }
 
     storeId = (id) => {
@@ -46,6 +65,8 @@ class AnimeList extends Component {
     }
 
     render() {
+        var user = firebase.auth().currentUser;
+
         const animeList = this.props.output;
         let tempList = null;
         if (this.props.output !== null && this.props.output.length > 0) {
@@ -107,7 +128,8 @@ class AnimeList extends Component {
                             <div className="modal-footer justify-content-between">
                                 <Row>
                                     <a href={anime.url} className="nav-anime-btn btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
-                                    <NavLink to="#" className="nav-anime-btn btn btn-success btn-sm">Subscribe</NavLink>
+                                    {user ? (<button to="#" onClick={() => { this.handleSubscribe(anime.mal_id) }} className="nav-anime-btn btn btn-success btn-sm">Subscribe</button>) : (<div></div>)}
+                                    <div id="subscribe-notify">You have added this to your subscription! \ (•◡•) /</div>
                                 </Row>
                             </div>
                         </div>
