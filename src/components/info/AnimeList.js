@@ -1,5 +1,4 @@
-import React, { Component, useState } from 'react';
-import { NavLink } from 'react-router-dom'
+import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import $ from 'jquery';
 import axios from 'axios'
@@ -18,19 +17,20 @@ class AnimeList extends Component {
         }
     }
 
-    handleSubscribe = (id) => {
+    handleSubscribe = (id, title, img_url, status, episodes, score) => {
         console.log(id);
         var db = firebase.firestore();
         $('#subscribe-notify').css("display", "block");
         setTimeout(function () {
             $('#subscribe-notify').css("display", "none");
-        }, 3000);
+        }, 10000);
         if (firebase.auth().currentUser !== null) {
             // https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array
             var userId = firebase.auth().currentUser.uid;
             var userAdd = db.collection('users').doc(userId);
+            var animeArr = { id, title, img_url, status, episodes, score };
             userAdd.update({
-                animeIds: firebase.firestore.FieldValue.arrayUnion(id)
+                anime: firebase.firestore.FieldValue.arrayUnion(animeArr)
             });
         }
 
@@ -128,8 +128,8 @@ class AnimeList extends Component {
                             <div className="modal-footer justify-content-between">
                                 <Row>
                                     <a href={anime.url} className="nav-anime-btn btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
-                                    {user ? (<button to="#" onClick={() => { this.handleSubscribe(anime.mal_id) }} className="nav-anime-btn btn btn-success btn-sm">Subscribe</button>) : (<div></div>)}
-                                    <div id="subscribe-notify">You have added this to your subscription! \ (•◡•) /</div>
+                                    {user ? (<button to="#" onClick={() => { this.handleSubscribe(anime.mal_id, anime.title, anime.image_url, anime.status, anime.episodes, anime.score) }} className="nav-anime-btn btn btn-success btn-sm">Subscribe</button>) : (<div></div>)}
+                                    <div id="subscribe-notify">You have added this to your subscription! Refresh the page to view on your anime list. \ (•◡•) /</div>
                                 </Row>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ class AnimeList extends Component {
                 <Row id="animes">
                     {tempList}
                 </Row>
-            </div >
+            </div>
         )
     }
 }

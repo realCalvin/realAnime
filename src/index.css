@@ -315,6 +315,64 @@ input[type=password]:not(.browser-default):focus:not([readonly]){
 
 /* 
 ***************************************************************
+SubscribedAnimes.js
+***************************************************************
+*/
+.indent{
+  padding-top: 10px;
+  padding-left: 35px;
+  color: rgb(139, 139, 139);
+}
+.subscribedAnimes{
+  padding-bottom: 65px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.subscribedInfo{
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  flex-direction: column;
+}
+.subImg{
+  height: 180px;
+  width: auto;
+}
+.subscribedInfo ul{
+  list-style: none;
+}
+.sub-btn{
+  font-size: 14px;
+  border: 1px solid black;
+  margin-top: 15px;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+.sub-btn:hover{
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+.delete-btn{
+  font-size: 14px;
+  border: 1px solid red;
+  margin-top: 15px;
+  margin-left: 5px;
+  transition: 0.3s;
+}
+.delete-btn:hover{
+  background-color: rgb(255, 137, 137);
+  color: white;
+}
+#animeDeleted{
+  color: red;
+  font-size: 16px;
+  padding-bottom: 25px;
+  display: none;
+}
+
+/* 
+***************************************************************
 Media Queries
 ***************************************************************
 */

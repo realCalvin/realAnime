@@ -5,16 +5,17 @@ import { UserPic } from './user.png'
 import Divider from '@material-ui/core/Divider';
 import MenuItem from '@material-ui/core/ListItem';
 import firebase from '../../config/firebase'
+import SubscribedAnimes from '../user/SubscribedAnimes.js'
 
 const SignedInLinks = () => {
 
     let user = firebase.auth().currentUser;
-    let name, photoUrl, emailVerified;
+    let name;
 
     if (user != null) {
         name = user.displayName;
-        photoUrl = user.photoURL;
-        emailVerified = user.emailVerified;
+        // photoUrl = user.photoURL;
+        // emailVerified = user.emailVerified;
     }
 
     const logout = (e) => {
@@ -22,7 +23,7 @@ const SignedInLinks = () => {
     }
 
     return (
-        <div>
+        < div >
             <MenuItem button key="user" className="list-item user-img">
                 <Avatar src={UserPic} className="userProfileImg" /><h3 className="userName">{name}</h3>
             </MenuItem>
@@ -32,7 +33,7 @@ const SignedInLinks = () => {
             </MenuItem>
             <Divider />
             <MenuItem button key="account" className="list-item">
-                <NavLink to="#" className="nav-link-item"><i className="fas fa-list-ul">&nbsp; <span className="list-text">Anime List</span></i></NavLink>
+                <button className="auth-btn nav-link-item" data-toggle="modal" data-target="#subAnimeModal"><i className="fas fa-list-ul">&nbsp; <span className="list-text">Anime List</span></i></button>
             </MenuItem>
             <Divider />
             <MenuItem button key="settings" className="list-item">
@@ -43,8 +44,8 @@ const SignedInLinks = () => {
                 <button to="#" onClick={logout} className="auth-btn nav-link-item"><i className="fas fa-sign-out-alt">&nbsp; <span className="list-text">Logout</span></i></button>
             </MenuItem>
             <Divider />
-
-        </div>
+            <SubscribedAnimes />
+        </div >
     )
 }
 export default SignedInLinks
