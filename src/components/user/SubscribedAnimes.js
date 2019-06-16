@@ -35,10 +35,8 @@ class SubscribedAnimes extends Component {
             var myAnime = db.collection('users').doc(user.uid);
             myAnime.get().then(result => {
                 var animes = result.data().anime;
-                var counter = -1;
                 if (result.exists) {
                     var animeList = animes.map(anime => {
-                        counter++;
                         return (
                             <div key={anime.id} className="subscribedAnimes">
                                 <img className="subImg" src={anime.img_url} alt={anime.title}></img>

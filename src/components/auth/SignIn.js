@@ -17,6 +17,7 @@ class SignIn extends Component {
     login = (e) => {
         e.preventDefault();
         firebase.auth().signInWithEmailAndPassword(this.state.emaillogin, this.state.passwordlogin).then((u) => {
+            window.location.reload();
         }).catch((error) => {
             console.log(error);
             switch (error.code) {
@@ -51,6 +52,7 @@ class SignIn extends Component {
                     // The signed-in user info.
                     var user = result.user;
                     console.log(user);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     alert(error);
@@ -62,6 +64,7 @@ class SignIn extends Component {
                     // The signed-in user info.
                     var user = result.user;
                     console.log(user);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     alert(error);
@@ -80,6 +83,7 @@ class SignIn extends Component {
                     // The signed-in user info.
                     var user = result.user;
                     console.log(user);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     alert(error);
@@ -91,6 +95,7 @@ class SignIn extends Component {
                     // The signed-in user info.
                     var user = result.user;
                     console.log(user);
+                    window.location.reload();
                 })
                 .catch((error) => {
                     alert(error);
