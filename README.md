@@ -5,6 +5,8 @@ Checklist:
 - [X] API Call To Search Anime
 - [X] User Authentication
 - [X] Store User's Subscribed Animes
+- [ ] User Accouting Settings
+- [ ] "Hot" Anime Page
 - [ ] Send Email/Text Notification On Latest Anime Updates
 - [ ] Redesign And Enhance UI/UX Experience
 

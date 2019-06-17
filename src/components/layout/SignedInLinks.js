@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import MenuItem from '@material-ui/core/ListItem';
 import firebase from '../../config/firebase'
 import SubscribedAnimes from '../user/SubscribedAnimes.js'
+import UserSetting from '../auth/UserSetting.js'
 
 const SignedInLinks = () => {
 
@@ -37,7 +38,7 @@ const SignedInLinks = () => {
             </MenuItem>
             <Divider />
             <MenuItem button key="settings" className="list-item">
-                <NavLink to="#" className="nav-link-item"><i className="fas fa-cog">&nbsp; <span className="list-text">Settings</span></i></NavLink>
+                <NavLink to="#" className="nav-link-item" data-toggle="modal" data-target="#settingModal"><i className="fas fa-cog">&nbsp; <span className="list-text">Settings</span></i></NavLink>
             </MenuItem>
             <Divider />
             <MenuItem button key="logout" className="list-item">
@@ -45,6 +46,7 @@ const SignedInLinks = () => {
             </MenuItem>
             <Divider />
             <SubscribedAnimes />
+            <UserSetting />
         </div >
     )
 }
