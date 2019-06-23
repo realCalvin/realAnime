@@ -28,7 +28,6 @@ class SignUp extends Component {
                 console.log(data.user.uid);
                 data.user.updateProfile({
                     displayName: this.state.name,
-                    phoneNumber: this.state.phone,
                 })
 
             })
@@ -73,8 +72,6 @@ class SignUp extends Component {
                                 <h6>Password: </h6>
                                 <input type="password" name="passwordsignup" className="form-control center-block" placeholder="Your Password" onChange={this.handleChange} required />
                                 <br />
-                                <h6>Phone Number: </h6>
-                                <input type="text" name="phone" className="form-control center-block" placeholder="Optional" onChange={this.handleChange} />
                                 <div className="modal-footer">
                                     <button type="submit" className="btn btn-primary form-control center-block" >Register</button>
                                 </div>

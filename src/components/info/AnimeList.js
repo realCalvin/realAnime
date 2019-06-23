@@ -29,9 +29,18 @@ class AnimeList extends Component {
             var userId = firebase.auth().currentUser.uid;
             var userAdd = db.collection('users').doc(userId);
             var animeArr = { id, title, img_url, status, episodes, score };
-            userAdd.update({
-                anime: firebase.firestore.FieldValue.arrayUnion(animeArr)
-            });
+            userAdd.get()
+                .then(doc => {
+                    if (!doc.exists) { // doc doesn't exit
+                        userAdd.set({
+                            anime: firebase.firestore.FieldValue.arrayUnion(animeArr)
+                        })
+                    } else { // doc exists
+                        userAdd.update({
+                            anime: firebase.firestore.FieldValue.arrayUnion(animeArr)
+                        });
+                    }
+                })
         }
 
     }
