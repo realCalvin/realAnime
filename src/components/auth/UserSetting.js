@@ -34,7 +34,6 @@ class UserSetting extends Component {
                 })
             }
         }
-        console.log(user["providerData"][0]["providerId"]);
     }
 
     handleEdit = () => {
@@ -74,7 +73,12 @@ class UserSetting extends Component {
 
         // updates email
         user.updateEmail(this.state.email).then(function () {
-            console.log("Changed email!")
+            user.sendEmailVerification().then(function () {
+                alert("Email Changed. Check For Email Verification Link!")
+            }).catch(function (error) {
+                alert(error)
+            })
+
         }).catch(function (error) {
             alert(error)
         });
@@ -107,11 +111,14 @@ class UserSetting extends Component {
                                         <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email</label>
                                         <div className="col-sm-10">
                                             <input type="text" readOnly className="form-control" id="staticEmail" value={this.state.email || 'None'} onChange={this.handleChangeEmail}></input>
+                                            <div className="email-verified-msg">&nbsp;
+                                                {this.state.emailVerified ? <i id="verified">Email Verified<i class="fas fa-check"></i></i> : <i id="not-verified">Email Not Verified <i class="fas fa-times"></i></i>}
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="form-group row">
                                         <label htmlFor="staticPassword" className="col-sm-2 col-form-label">Password</label>
-                                        <div className="col-sm-10">
+                                        <div className="col-sm-10 reset-password">
                                             {/* Link to reset password 
                                         https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email */}
                                             <a href="#" className="col-sm-2 col-form-label">Click here to reset your password.</a>
@@ -119,6 +126,7 @@ class UserSetting extends Component {
                                     </div>
                                 </div>
                                 <div className="modal-footer">
+                                    {!this.state.emailVerified ? <button className="btn btn-danger">Resend verification email</button> : <div></div>}
                                     <button type="submit" className="btn btn-primary">Submit</button>
                                 </div>
                             </form>

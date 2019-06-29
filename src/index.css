@@ -373,6 +373,25 @@ SubscribedAnimes.js
 
 /* 
 ***************************************************************
+UserSetting.js
+***************************************************************
+*/
+.email-verified-msg #verified{
+  font-size: 14px;
+  color: rgb(121, 255, 121);
+}
+.email-verified-msg #not-verified{
+  font-size: 14px;
+  color: rgb(255, 56, 56);
+}
+.email-verified-msg .fas{
+  font-size: 14px;
+}
+.reset-password{
+  margin-top: 8px;
+}
+/* 
+***************************************************************
 Media Queries
 ***************************************************************
 */
