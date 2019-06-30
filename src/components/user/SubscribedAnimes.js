@@ -46,8 +46,7 @@ class SubscribedAnimes extends Component {
                                         <li className="indent">Status: {anime.status}</li>
                                         <li className="indent">Episodes: {anime.episodes ? anime.episodes : "N/A"}</li>
                                         <li className="indent">Score: {anime.score}</li>
-                                        <button className="btn sub-btn btn-default" onClick={() => { this.handleNotify() }}>Notify Me (~˘▾˘)~</button>
-                                        <button className="btn delete-btn btn-default" onClick={() => this.handleDelete(anime.id, anime.title, anime.img_url, anime.status, anime.episodes, anime.score)}>Delete</button>
+                                        <button className="btn delete-btn btn-default" onClick={() => this.handleDelete(anime.id, anime.title, anime.img_url, anime.status, anime.episodes, anime.score)}>Delete (~˘▾˘)~</button>
                                     </ul>
                                 </div>
                             </div>

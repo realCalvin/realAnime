@@ -359,6 +359,7 @@ SubscribedAnimes.js
   margin-top: 15px;
   margin-left: 5px;
   transition: 0.3s;
+  margin-left: 35px;
 }
 .delete-btn:hover{
   background-color: rgb(255, 137, 137);
@@ -387,9 +388,7 @@ UserSetting.js
 .email-verified-msg .fas{
   font-size: 14px;
 }
-.reset-password{
-  margin-top: 8px;
-}
+
 /* 
 ***************************************************************
 Media Queries

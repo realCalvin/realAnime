@@ -14,6 +14,8 @@ class UserSetting extends Component {
             email: null,
             uid: null,
             emailVerified: null,
+            nameChanged: false,
+            emailChanged: false,
         }
     }
 
@@ -51,12 +53,21 @@ class UserSetting extends Component {
     handleChangeName = (e) => {
         this.setState({
             name: e.target.value,
+            nameChanged: true,
         });
     }
     handleChangeEmail = (e) => {
         this.setState({
             email: e.target.value,
+            emailChanged: true,
         });
+    }
+    handleReset = (e) => {
+        e.preventDefault();
+        var auth = firebase.auth();
+        auth.sendPasswordResetEmail(this.state.email).then(function () {
+            alert("Password reset link sent to your primary email.")
+        })
     }
     handleSubmit = (e) => {
         e.preventDefault();
@@ -66,15 +77,13 @@ class UserSetting extends Component {
         user.updateProfile({
             displayName: this.state.name
         }).then(function () {
-            console.log("Changed name!")
         }).catch(function (error) {
-            console.log(error)
+            alert(error)
         });
 
         // updates email
         user.updateEmail(this.state.email).then(function () {
             user.sendEmailVerification().then(function () {
-                alert("Email Changed. Check For Email Verification Link!")
             }).catch(function (error) {
                 alert(error)
             })
@@ -82,6 +91,16 @@ class UserSetting extends Component {
         }).catch(function (error) {
             alert(error)
         });
+
+        if (this.state.nameChanged === true && this.state.emailChanged === true) {
+            alert("Name Changed and Email Changed. Check For Email Verification Link!")
+        }
+        else if (this.state.nameChanged === true && this.state.emailChanged === false) {
+            alert("Name Changed. Refresh to See Updated Name!")
+        }
+        else if (this.state.nameChanged === false && this.state.emailChanged === true) {
+            alert("Email Changed. Check For Email Verification Link!")
+        }
     }
 
     render() {
@@ -107,21 +126,18 @@ class UserSetting extends Component {
                                         </div>
                                     </div>
                                     <div className="form-group row">
-                                        {/*https://firebase.google.com/docs/auth/web/manage-users#re-authenticate_a_user*/}
                                         <label htmlFor="staticEmail" className="col-sm-2 col-form-label">Email</label>
                                         <div className="col-sm-10">
                                             <input type="text" readOnly className="form-control" id="staticEmail" value={this.state.email || 'None'} onChange={this.handleChangeEmail}></input>
                                             <div className="email-verified-msg">&nbsp;
-                                                {this.state.emailVerified ? <i id="verified">Email Verified<i class="fas fa-check"></i></i> : <i id="not-verified">Email Not Verified <i class="fas fa-times"></i></i>}
+                                                {this.state.emailVerified ? <i id="verified">Email Verified <i className="fas fa-check"></i></i> : <i id="not-verified">Email Not Verified <i className="fas fa-times"></i></i>}
                                             </div>
                                         </div>
                                     </div>
                                     <div className="form-group row">
                                         <label htmlFor="staticPassword" className="col-sm-2 col-form-label">Password</label>
                                         <div className="col-sm-10 reset-password">
-                                            {/* Link to reset password 
-                                        https://firebase.google.com/docs/auth/web/manage-users#send_a_password_reset_email */}
-                                            <a href="#" className="col-sm-2 col-form-label">Click here to reset your password.</a>
+                                            <button onClick={this.handleReset} className="btn btn-link col-sm-2 col-form-label">Click here to reset your password.</button>
                                         </div>
                                     </div>
                                 </div>
