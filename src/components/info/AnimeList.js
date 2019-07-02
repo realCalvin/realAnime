@@ -82,6 +82,19 @@ class AnimeList extends Component {
             const myAnimeList = animeList.map(anime => {
                 $('#my-dashboard').css('height', 'auto');
                 $('.dashboard-items').css('transform', 'translate(-1%,156%)');
+
+
+                if (anime.title.length > 45) {
+                    var counter = 0, title = "", dot;
+                    while (counter < 45) {
+                        title += anime.title[counter];
+                        counter++;
+                    }
+                    dot = new Array(3).join('.');
+                    title += dot;
+                    anime.title = title;
+                }
+                console.log(anime.title.length)
                 return (
                     <div className="col-xs-12 col-sm-6 col-lg-4 col-xl-3 anime-card" key={anime.mal_id}>
                         <div className="well text-center">
@@ -136,8 +149,8 @@ class AnimeList extends Component {
                             </div>
                             <div className="modal-footer justify-content-between">
                                 <Row>
-                                    <a href={anime.url} className="nav-anime-btn btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
                                     {user ? (<button to="#" onClick={() => { this.handleSubscribe(anime.mal_id, anime.title, anime.image_url, anime.status, anime.episodes, anime.score) }} className="nav-anime-btn btn btn-success btn-sm">Subscribe</button>) : (<div></div>)}
+                                    <a href={anime.url} className="nav-anime-btn btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
                                     <div id="subscribe-notify">You have added this to your subscription! Refresh the page to view on your anime list. \ (•◡•) /</div>
                                 </Row>
                             </div>

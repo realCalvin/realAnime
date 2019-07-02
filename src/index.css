@@ -96,6 +96,19 @@ AnimeList.js
   padding-top: 10px;
   padding-left: 10px;
 }
+.anime-card{
+  position: relative;
+  padding-bottom: 60px !important;
+  margin: 20px 0px;
+}
+.anime-card .btn{
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+}
+.anime-card h6{
+  word-wrap: break-word;
+}
 
 /* 
 ***************************************************************
@@ -211,18 +224,28 @@ video{
 .selected-anime{
   padding-top: 5%;
 }
-.anime-info{
+#animeModal .anime-info{
   list-style-type: none;
-  padding-left: 45px !important;
+  padding-left: 45px;
 }
-.anime-info li{
+#animeModal .anime-info li{
   padding-top: 10px;
 }
-.anime-synopsis{
+#animeModal .anime-synopsis{
   padding: 30px 0 0 15px;
 }
-.nav-anime-btn{
+#animeModal .nav-anime-btn{
   margin: 5px;
+}
+@media only screen and (max-width: 725px) {
+  #animeModal .anime-info{
+    list-style-type: none;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+  #animeModal .anime-info li{
+    padding-top: 10px;
+  }
 }
 /* 
 ***************************************************************
