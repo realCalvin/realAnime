@@ -4,12 +4,10 @@ class Search extends Component {
     render() {
         return (
             <div className="container search">
-                <div id="landing-page">
-                    <form id="searchForm" className="form-inline" onSubmit={this.props.handleSubmit}>
-                        <input type="text" className="form-control anime-input" id="searchText" placeholder="Search Anime"></input>
-                        <button className="btn btn-link btn-sm" id="search-btn"><i className="fas fa-search"></i></button>
-                    </form>
-                </div>
+                <form id="searchForm" className="form-inline" onSubmit={this.props.handleSubmit}>
+                    <input type="text" className="form-control anime-input" id="searchText" placeholder="Search Anime"></input>
+                    <button className="btn btn-link btn-sm" id="search-btn"><i className="fas fa-search"></i></button>
+                </form>
             </div>
         )
     }

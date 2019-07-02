@@ -136,18 +136,38 @@ video{
   pointer-events: none;
   object-fit: cover;
 }
+#my-dashboard{
+  height: auto;
+}
 .dashboard-page{
-  padding-right: 10px;
+  padding-top: 20%;
   z-index: 1;
+  width: 100%;
+}
+.search-box{
+  display: flex;
+}
+.search{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .dashboard-items{
+  justify-content: center;
+}
+#searchForm{
+  justify-content: center;
+}
+.dashboard-items img{
+  width: 30%;
+  margin-right: 35px;
+  margin-bottom: 15px;
+}
+/* .dashboard-items{
   display: block;
   margin-left: auto;
   margin-right: auto;
   transform: translate(-5%,30%);
-}
-.dashboard-logo-name{
-  list-style: none;
 }
 .dashboard-logo{
   display: block;
@@ -155,20 +175,12 @@ video{
   margin-right: auto;
   width: 30%;
   transform: translateX(-60%);
-}
-.dashboard-name{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  transform: translateX(-40%);
-}
-.search-box{
+} */
+/* .search-box{
   transform: translateX(18%);
-}
+} */
 .anime-list{
-  margin-top: 10%;
-  transform: translateY(5%);
+  margin-top: 200px !important;
 }
 .anime-input{
   width: 35em !important;
@@ -176,8 +188,7 @@ video{
 .anime-card{
   padding: 20px;
 }
-.modal-backdrop
-{
+.modal-backdrop {
     z-index: -999;
 }
 .anime-modal-content {
@@ -236,16 +247,6 @@ video{
 }
 #animeModal .nav-anime-btn{
   margin: 5px;
-}
-@media only screen and (max-width: 725px) {
-  #animeModal .anime-info{
-    list-style-type: none;
-    padding-top: 15px;
-    padding-left: 20px;
-  }
-  #animeModal .anime-info li{
-    padding-top: 10px;
-  }
 }
 /* 
 ***************************************************************
@@ -430,38 +431,31 @@ Media Queries
 }
 @media screen  and (max-width: 990px) /* Tablet */ {
   .anime-input{
-    width: 20em !important;
+    width: 25em !important;
+  }
+  .anime-list{
+    margin: 0;
+    padding: 0;
   }
   .dashboard-page{
     padding-left: 70px;
   }
-  .dashboard-logo{
+  .dashboard-items img{
     width: 40%;
-    transform: translateX(-55%);
-  }
-  .dashboard-name{
-    width: 60%;
-    transform: translateX(-35%);
-  }
-  .selected-anime{
-    padding-left: 70px;
-    transform: translateY(2%);
+    margin-right: 45px;
   }
 }
 @media screen  and (max-width: 770px) {
   .anime-input{
     width: 17.3em !important;
   }
-  .search-box{
-    transform: translateX(10%);
+  #animeModal .anime-info{
+    list-style-type: none;
+    padding-top: 15px;
+    padding-left: 20px;
   }
-  .dashboard-logo{
-    width: 60%;
-    transform: translateX(-35%);
-  }
-  .dashboard-name{
-    width: 80%;
-    transform: translateX(-20%);
+  #animeModal .anime-info li{
+    padding-top: 10px;
   }
 }
 @media screen and (max-width: 575px) /* Mobile */ {
@@ -470,25 +464,20 @@ Media Queries
   }
   .dashboard-logo{
     width: 70%;
-    transform: translateX(-25%);
   }
-  .dashboard-name{
-    width: 100%;
-    transform: translateX(-15%);
-  }
-  .search-box{
-    transform: translateX(5%);
-  }
-  .anime-list{
-    padding-left: 10px;
-    transform: translate(-6%,2%);
+  .dashboard-items img{
+    width: 45%;
+    margin-right: 0px;
   }
   .toggle-arrow{
     position: absolute;
     right: 15%;
   }
   #searchText{
-    width: 13em !important;
+    width: 12em !important;
+  }
+  #search-btn{
+    display: none;
   }
   .modal{
     margin-top: 2em;
@@ -506,12 +495,5 @@ Media Queries
 }
 
 @media screen and (max-width: 468px) /* smaller mobile */ {
-  #search-btn{
-    position: absolute;
-    left: 220px;
-    bottom: 1px;
-  }
-  .anime-list{
-    transform: translate(3%,2%);
-  }
+
 }

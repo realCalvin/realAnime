@@ -59,9 +59,7 @@ class Dashboard extends Component {
                 <div className="container dashboard-page">
                     <div className="search-box">
                         <div className="row dashboard-items">
-                            <ul className="dashboard-logo-name">
-                                <li><img className="dashboard-logo" src={logo} alt="website-logo" /></li>
-                            </ul>
+                            <img className="dashboard-logo" src={logo} alt="website-logo" />
                             <Search handleSubmit={this.handleSubmit} />
                         </div>
                     </div>

@@ -80,8 +80,8 @@ class AnimeList extends Component {
         let tempList = null;
         if (this.props.output !== null && this.props.output.length > 0) {
             const myAnimeList = animeList.map(anime => {
-                $('#my-dashboard').css('height', 'auto');
-                $('.dashboard-items').css('transform', 'translate(-1%,156%)');
+                // $('#my-dashboard').css('height', 'auto');
+                // $('.dashboard-items').css('transform', 'translate(-1%,156%)');
 
 
                 if (anime.title.length > 45) {
