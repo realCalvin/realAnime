@@ -301,7 +301,7 @@ input[type=password]:not(.browser-default):focus:not([readonly]){
 .google-auth-btn:hover{
   
   background-color: rgb(252, 222, 208);
-  border-color: rgb(255, 122, 60);
+  border-color: rgb(255, 73, 60);
 }
 .facebook-auth-btn:hover{
   background-color: rgb(191, 216, 255);
@@ -318,8 +318,7 @@ input[type=password]:not(.browser-default):focus:not([readonly]){
   font-size: 1.4em;
 }
 .sign-in-up-btn:hover{
-  font-size: 27px;
-  color: rgb(250, 141, 141);
+  font-size: 26px;
 }
 .auth-selected-btn{
   border-top: none;
