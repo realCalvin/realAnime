@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     background: 'rgba(0, 0, 0, 0.25)',
     border: 'none',
-    color: 'white',
+    color: 'white !important',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,

@@ -30,7 +30,11 @@ const SignedInLinks = () => {
             </MenuItem>
             <Divider />
             <MenuItem button key="home" className="list-item">
-                <NavLink exact to="/" className="nav-link-item"><i className="fas fa-home">&nbsp; <span className="list-text">Home</span></i></NavLink>
+                <NavLink exact to="/" className="nav-link-item"><i className="fas fa-home">&nbsp;<span className="list-text">Home</span></i></NavLink>
+            </MenuItem>
+            <Divider />
+            <MenuItem button key="hot" className="list-item">
+                <NavLink to="#" className="nav-link-item"><i className="fas fa-fire-alt">&nbsp; <span className="list-text">Hot Animes</span></i></NavLink>
             </MenuItem>
             <Divider />
             <MenuItem button key="account" className="list-item">

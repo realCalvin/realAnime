@@ -49,13 +49,9 @@ Navbar.js
   color: inherit;
   text-decoration: none;
 }
-.nav-link-item:hover,
-.nav-link-item:active{
+.nav-link-item:hover{
   color: red;
   text-decoration: none;
-}
-.nav-link-item.active {
-  color: green;
 }
 .userProfileImg{
   margin-left: -5px;
@@ -139,6 +135,7 @@ video{
 #my-dashboard{
   height: auto;
 }
+
 .dashboard-page{
   padding-top: 20%;
   z-index: 1;
