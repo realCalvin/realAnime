@@ -25,7 +25,7 @@ const SignedInLinks = () => {
 
     return (
         < div >
-            <MenuItem button key="user" className="list-item user-img">
+            <MenuItem button key="user" className="list-item user-img" data-toggle="modal" data-target="#settingModal">
                 <Avatar src={UserPic} className="userProfileImg" /><h3 className="userName">{name}</h3>
             </MenuItem>
             <Divider />

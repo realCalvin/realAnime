@@ -189,7 +189,7 @@ video{
   padding: 20px;
 }
 .modal-backdrop {
-    z-index: -999;
+  z-index: -99;
 }
 .anime-modal-content {
   position: relative;
@@ -235,18 +235,21 @@ video{
 .selected-anime{
   padding-top: 5%;
 }
-#animeModal .anime-info{
+.anime-modal .anime-info{
   list-style-type: none;
   padding-left: 45px;
 }
-#animeModal .anime-info li{
+.anime-modal .anime-info li{
   padding-top: 10px;
 }
-#animeModal .anime-synopsis{
+.anime-modal .anime-synopsis{
   padding: 30px 0 0 15px;
 }
-#animeModal .nav-anime-btn{
+.anime-modal .nav-anime-btn{
   margin: 5px;
+}
+.anime-modal p{
+  white-space:normal; 
 }
 /* 
 ***************************************************************
@@ -353,6 +356,9 @@ SubscribedAnimes.js
   position: relative;
   width: 100%;
 }
+.subscribedAnimes img, h6:hover{
+  cursor: pointer;
+}
 .subscribedInfo{
   position: absolute;
   top: 0px;
@@ -449,12 +455,12 @@ Media Queries
   .anime-input{
     width: 17.3em !important;
   }
-  #animeModal .anime-info{
+  .anime-modal .anime-info{
     list-style-type: none;
     padding-top: 15px;
     padding-left: 20px;
   }
-  #animeModal .anime-info li{
+  .anime-modal .anime-info li{
     padding-top: 10px;
   }
 }

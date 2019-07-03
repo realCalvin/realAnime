@@ -78,18 +78,18 @@ class UserSetting extends Component {
             displayName: this.state.name
         }).then(function () {
         }).catch(function (error) {
-            alert(error)
+            console.log(error)
         });
 
         // updates email
         user.updateEmail(this.state.email).then(function () {
             user.sendEmailVerification().then(function () {
             }).catch(function (error) {
-                alert(error)
+                console.log(error)
             })
 
         }).catch(function (error) {
-            alert(error)
+            console.log(error)
         });
 
         if (this.state.nameChanged === true && this.state.emailChanged === true) {
