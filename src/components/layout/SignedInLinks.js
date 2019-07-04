@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/ListItem';
 import firebase from '../../config/firebase'
 import SubscribedAnimes from '../user/SubscribedAnimes.js'
 import UserSetting from '../auth/UserSetting.js'
+import HotAnime from '../info/HotAnime.js'
 
 const SignedInLinks = () => {
 
@@ -34,7 +35,7 @@ const SignedInLinks = () => {
             </MenuItem>
             <Divider />
             <MenuItem button key="hot" className="list-item">
-                <NavLink to="#" className="nav-link-item"><i className="fas fa-fire-alt">&nbsp; <span className="list-text">Hot Animes</span></i></NavLink>
+                <NavLink to="#" className="nav-link-item" data-toggle="modal" data-target="#hotAnimeModal"><i className="fas fa-fire-alt">&nbsp; <span className="list-text">Hot Animes</span></i></NavLink>
             </MenuItem>
             <Divider />
             <MenuItem button key="account" className="list-item">
@@ -51,6 +52,7 @@ const SignedInLinks = () => {
             <Divider />
             <SubscribedAnimes />
             <UserSetting />
+            <HotAnime />
         </div >
     )
 }
