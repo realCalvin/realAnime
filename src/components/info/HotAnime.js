@@ -22,17 +22,19 @@ class HotAnime extends Component {
                 var topAnime = animes.map(anime => {
                     console.log(anime)
                     return (
-                        <div key={anime.mal_id} className="subscribedAnimes">
-                            <img className="subImg" src={anime.image_url} alt={anime.title} onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal"></img>
-                            <div className="subscribedInfo">
-                                <ul>
-                                    <li><h6 onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal">{anime.title}</h6></li>
-                                    <li className="indent">Date: {anime.start_date}-{anime.end_date}</li>
+                        <div key={anime.mal_id} className="row hot-anime">
+                            <div className="col-md-5">
+                                <img className="hot-img" src={anime.image_url} alt={anime.title} onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal"></img>
+                            </div>
+                            <div className="col-md-7">
+                                <ul className="hot-list">
+                                    <li><h4 onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal">{anime.title}</h4></li>
+                                    <li className="indent">Rank: {anime.rank}</li>
+                                    <li className="indent">Date: {anime.start_date} - {anime.end_date}</li>
                                     <li className="indent">Episodes: {anime.episodes ? anime.episodes : "N/A"}</li>
                                     <li className="indent">Score: {anime.score}</li>
                                 </ul>
                             </div>
-                            <hr />
                         </div>
                     )
                 });
@@ -63,8 +65,10 @@ class HotAnime extends Component {
                         </div>
                         <div className="modal-body">
                             <Row>
-                                <button className="btn btn-dark btn-sm">All</button>
-                                <button className="btn btn-dark btn-sm">Airing</button>
+                                <button className="btn btn-dark btn-sm">All Animes</button>
+                                <button className="btn btn-dark btn-sm">Top Airing</button>
+                                <button className="btn btn-dark btn-sm">Top Movies</button>
+                                <button className="btn btn-dark btn-sm">Top Upcoming</button>
                             </Row>
                             <Row>
                                 <div className="well anime-synopsis">
