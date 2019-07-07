@@ -11,31 +11,54 @@ class HotAnime extends Component {
         super(props);
         this.state = {
             animeList: null,
+            anime: ''
         }
     }
 
-    render() {
+    handleModal = (id) => {
+        axios.get('https://api.jikan.moe/v3/anime/' + id)
+            .then((response) => {
+                let anime = response.data;
+                let anime_genres = '';
+                for (var i = 0; i < anime.genres.length; i++) {
+                    anime_genres += anime.genres[i].name
+                    if (i !== anime.genres.length - 1) {
+                        anime_genres += ', '
+                    }
+                }
+                this.setState({
+                    anime: anime,
+                    anime_genres: anime_genres,
+                    aired: anime.aired.string,
+                })
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        console.log(this.state.anime)
+    }
+
+    componentDidMount() {
         let list = null;
         axios.get("https://api.jikan.moe/v3/top/anime/1/tv")
             .then((response) => {
                 let animes = response.data.top;
                 var topAnime = animes.map(anime => {
-                    console.log(anime)
                     return (
                         <div key={anime.mal_id} className="row hot-anime">
                             <div className="col-md-5 hot-anime-pic">
-                                <img className="hot-img" src={anime.image_url} alt={anime.title} onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal"></img>
+                                <img className="hot-img" src={anime.image_url} alt={anime.title} onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subHotAnimeInfoModal"></img>
                             </div>
                             <div className="col-md-7 hot-anime-info">
                                 <ul className="hot-list">
-                                    <li><h4 onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal">{anime.title}</h4></li>
+                                    <li><h4 onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subHotAnimeInfoModal">{anime.title}</h4></li>
                                     <li className="indent">Rank: {anime.rank}</li>
                                     <li className="indent">Date: {anime.start_date} - {anime.end_date}</li>
                                     <li className="indent">Episodes: {anime.episodes ? anime.episodes : "N/A"}</li>
                                     <li className="indent">Score: {anime.score}</li>
                                 </ul>
                                 <div className="hot-anime-btn">
-                                    <button class="btn btn-primary">More Information</button>
+                                    <button className="btn btn-primary" onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subHotAnimeInfoModal">More Information</button>
                                 </div>
                             </div>
                         </div>
@@ -53,31 +76,73 @@ class HotAnime extends Component {
                     })
                 }
             })
+    }
 
+    render() {
+        const { anime } = this.state;
+        console.log(anime)
         return (
-            <div className="modal anime-modal fade" id="hotAnimeModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-                    <div className="modal-content anime-modal-content">
-                        <div className="modal-header">
-                            <Row className="modal-title">
-                                <h1>Hot Animes</h1>
-                            </Row>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+            <div id="hotanime">
+                <div className="modal anime-modal fade" id="hotAnimeModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                        <div className="modal-content anime-modal-content">
+                            <div className="modal-header">
+                                <Row className="modal-title">
+                                    <h1>Hot Animes</h1>
+                                </Row>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <Row>
+                                    <button className="btn btn-dark btn-sm btn-filter" id="">All Animes</button>
+                                    <button className="btn btn-dark btn-sm btn-filter" id="airing">Top Airing</button>
+                                    <button className="btn btn-dark btn-sm btn-filter" id="movie">Top Movies</button>
+                                    <button className="btn btn-dark btn-sm btn-filter" id="upcoming">Top Upcoming</button>
+                                </Row>
+                                <Row>
+                                    <div className="well anime-synopsis">
+                                        {this.state.animeList}
+                                    </div>
+                                </Row>
+                            </div>
                         </div>
-                        <div className="modal-body">
-                            <Row>
-                                <button className="btn btn-dark btn-sm btn-filter">All Animes</button>
-                                <button className="btn btn-dark btn-sm btn-filter">Top Airing</button>
-                                <button className="btn btn-dark btn-sm btn-filter">Top Movies</button>
-                                <button className="btn btn-dark btn-sm btn-filter">Top Upcoming</button>
-                            </Row>
-                            <Row>
-                                <div className="well anime-synopsis">
-                                    {this.state.animeList}
-                                </div>
-                            </Row>
+                    </div>
+                </div>
+                <div className="modal anime-modal fade" id="subHotAnimeInfoModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+                        <div className="modal-content anime-modal-content">
+                            <div className="modal-header">
+                                <Row className="modal-title">
+                                    <div className="col-md-4">
+                                        <img src={anime.image_url} className="anime-image" alt={anime.title}></img>
+                                    </div>
+                                    <div className="col-md-8 anime-info">
+                                        <h4>{anime.title}</h4>
+                                        <ul className="anime-info">
+
+                                        </ul>
+                                    </div>
+                                </Row>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <Row>
+                                    <div className="well anime-synopsis">
+                                        <h5>Synopsis</h5>
+                                        <p>{anime.synopsis}</p>
+                                        <hr />
+                                    </div>
+                                </Row>
+                            </div>
+                            <div className="modal-footer justify-content-between">
+                                <Row>
+                                    <a href={anime.url} className="nav-anime-btn btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">View MyAnimeList</a>
+                                </Row>
+                            </div>
                         </div>
                     </div>
                 </div>
