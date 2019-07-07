@@ -23,10 +23,10 @@ class HotAnime extends Component {
                     console.log(anime)
                     return (
                         <div key={anime.mal_id} className="row hot-anime">
-                            <div className="col-md-5">
+                            <div className="col-md-5 hot-anime-pic">
                                 <img className="hot-img" src={anime.image_url} alt={anime.title} onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal"></img>
                             </div>
-                            <div className="col-md-7">
+                            <div className="col-md-7 hot-anime-info">
                                 <ul className="hot-list">
                                     <li><h4 onClick={() => { this.handleModal(anime.mal_id) }} data-toggle="modal" data-target="#subAnimeInfoModal">{anime.title}</h4></li>
                                     <li className="indent">Rank: {anime.rank}</li>
@@ -34,6 +34,9 @@ class HotAnime extends Component {
                                     <li className="indent">Episodes: {anime.episodes ? anime.episodes : "N/A"}</li>
                                     <li className="indent">Score: {anime.score}</li>
                                 </ul>
+                                <div className="hot-anime-btn">
+                                    <button class="btn btn-primary">More Information</button>
+                                </div>
                             </div>
                         </div>
                     )
@@ -65,10 +68,10 @@ class HotAnime extends Component {
                         </div>
                         <div className="modal-body">
                             <Row>
-                                <button className="btn btn-dark btn-sm">All Animes</button>
-                                <button className="btn btn-dark btn-sm">Top Airing</button>
-                                <button className="btn btn-dark btn-sm">Top Movies</button>
-                                <button className="btn btn-dark btn-sm">Top Upcoming</button>
+                                <button className="btn btn-dark btn-sm btn-filter">All Animes</button>
+                                <button className="btn btn-dark btn-sm btn-filter">Top Airing</button>
+                                <button className="btn btn-dark btn-sm btn-filter">Top Movies</button>
+                                <button className="btn btn-dark btn-sm btn-filter">Top Upcoming</button>
                             </Row>
                             <Row>
                                 <div className="well anime-synopsis">
