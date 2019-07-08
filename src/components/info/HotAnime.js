@@ -123,6 +123,7 @@ class HotAnime extends Component {
 
     render() {
         const { anime } = this.state;
+        const yt_link = "https://www.youtube.com/embed/?listType=search&list=anime+trailer+" + anime.title + "+&autoplay=1";
         console.log(anime)
         return (
             <div id="hotanime">
@@ -159,12 +160,13 @@ class HotAnime extends Component {
                             <div className="modal-header">
                                 <Row className="modal-title">
                                     <div className="col-md-4">
-                                        <img src={anime.image_url} className="anime-image" alt={anime.title}></img>
+                                        <img src={anime.image_url} className="hot-anime-image" alt={anime.title}></img>
                                     </div>
                                     <div className="col-md-8 anime-info">
                                         <h4>{anime.title}</h4>
                                         <ul className="anime-info">
-
+                                            <h5>Synopsis</h5>
+                                            <p>{anime.synopsis}</p>
                                         </ul>
                                     </div>
                                 </Row>
@@ -174,9 +176,8 @@ class HotAnime extends Component {
                             </div>
                             <div className="modal-body">
                                 <Row>
-                                    <div className="well anime-synopsis">
-                                        <h5>Synopsis</h5>
-                                        <p>{anime.synopsis}</p>
+                                    <div className="well hot-anime-video">
+                                        <iframe src={yt_link} title={anime.title} frameborder="0" allowFullScreen></iframe>
                                         <hr />
                                     </div>
                                 </Row>

@@ -439,8 +439,21 @@ HotAnime.js
 .hot-list li{
   font-size: 22px;
 }
+.hot-anime-image{
+  height: 450px;
+}
 .hot-anime-info{
   position: relative;
+}
+.hot-anime-video{
+  display: block;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hot-anime-video iframe{
+  width: 800px;
+  height: 500px;
 }
 .hot-anime-btn{
   display: flex;
@@ -494,6 +507,10 @@ Media Queries
   }
   .hot-anime-info .btn{
     position: relative;
+  }
+  .hot-anime-video iframe{
+    width: 400px;
+    height: 400px;
   }
 }
 @media screen  and (max-width: 770px) {
@@ -556,7 +573,10 @@ Media Queries
     margin-left: 8px;
     margin-bottom: 10px;
   }
-
+  .hot-anime-video iframe{
+    width: 300px;
+    height: 300px;
+  }
 }
 
 @media screen and (max-width: 468px) /* smaller mobile */ {
