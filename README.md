@@ -5,7 +5,7 @@ Checklist:
 - [X] API Call To Search Anime
 - [X] User Authentication
 - [X] Store User's Subscribed Animes
-- [X] User Accouting Settings
+- [X] User Account Settings
 - [X] "Hot" Anime Page
 - [ ] Redesign And Enhance UI/UX Experience
 
