@@ -6,7 +6,7 @@ Checklist:
 - [X] User Authentication
 - [X] Store User's Subscribed Animes
 - [X] User Accouting Settings
-- [ ] "Hot" Anime Page
+- [X] "Hot" Anime Page
 - [ ] Redesign And Enhance UI/UX Experience
 
 

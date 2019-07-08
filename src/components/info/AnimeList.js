@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import $ from 'jquery';
 import axios from 'axios'
-import firebase from '../../config/firebase'
 import 'firebase/firestore';
 import AnimeModal from '../info/AnimeModal.js'
 
@@ -16,34 +15,6 @@ class AnimeList extends Component {
             aired: '',
             scrollPos: null,
         }
-    }
-
-    handleSubscribe = (id, title, img_url, status, episodes, score) => {
-        console.log(id);
-        var db = firebase.firestore();
-        $('#subscribe-notify').css("display", "block");
-        setTimeout(function () {
-            $('#subscribe-notify').css("display", "none");
-        }, 10000);
-        if (firebase.auth().currentUser !== null) {
-            // https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array
-            var userId = firebase.auth().currentUser.uid;
-            var userAdd = db.collection('users').doc(userId);
-            var animeArr = { id, title, img_url, status, episodes, score };
-            userAdd.get()
-                .then(doc => {
-                    if (!doc.exists) { // doc doesn't exit
-                        userAdd.set({
-                            anime: firebase.firestore.FieldValue.arrayUnion(animeArr)
-                        })
-                    } else { // doc exists
-                        userAdd.update({
-                            anime: firebase.firestore.FieldValue.arrayUnion(animeArr)
-                        });
-                    }
-                })
-        }
-
     }
 
     storeId = (id) => {
@@ -105,8 +76,11 @@ class AnimeList extends Component {
             })
             tempList = myAnimeList;
         }
+        // eslint-disable-next-line
         const { anime } = this.state;
+        // eslint-disable-next-line
         const { anime_genres } = this.state;
+        // eslint-disable-next-line
         const { aired } = this.state;
         return (
             <div className="wrapper">

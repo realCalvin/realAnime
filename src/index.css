@@ -422,9 +422,13 @@ HotAnime.js
 */
 .hot-anime{
   padding: 15px 10px;
-  border: 0.7px solid rgb(97, 97, 97);
+  box-shadow: 5px 5px 8px #757575;
   border-radius: 7px;
   margin: 20px 0px;
+}
+.hot-anime:hover{
+  box-shadow: 8px 8px 8px #666666;
+  transition: 0.4s;
 }
 .btn-filter{
   margin: 10px;

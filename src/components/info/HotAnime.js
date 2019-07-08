@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
 import $ from 'jquery';
+import { Row } from 'react-bootstrap';
 import axios from 'axios'
-import firebase from '../../config/firebase'
 import 'firebase/firestore';
 
 class HotAnime extends Component {
@@ -177,7 +176,7 @@ class HotAnime extends Component {
                             <div className="modal-body">
                                 <Row>
                                     <div className="well hot-anime-video">
-                                        <iframe src={yt_link} title={anime.title} frameborder="0" allowFullScreen></iframe>
+                                        <iframe src={yt_link} title={anime.title} frameBorder="0" allowFullScreen></iframe>
                                         <hr />
                                     </div>
                                 </Row>

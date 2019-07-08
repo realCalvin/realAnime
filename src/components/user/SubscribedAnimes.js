@@ -4,6 +4,7 @@ import $ from 'jquery';
 import firebase from '../../config/firebase'
 import 'firebase/firestore';
 import axios from 'axios'
+// eslint-disable-next-line
 import AnimeModal from '../info/AnimeModal.js'
 
 class SubscribedAnimes extends Component {
@@ -95,6 +96,7 @@ class SubscribedAnimes extends Component {
     }
 
     render() {
+        // eslint-disable-next-line
         var user = firebase.auth().currentUser;
         const { anime } = this.state;
         const { anime_genres } = this.state;
