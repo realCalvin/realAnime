@@ -548,9 +548,11 @@ Media Queries
     width: 5em !important;
   }
   .dashboard-logo{
+    height: 90px;
     width: 70%;
   }
   .dashboard-items img{
+    height: 90px;
     width: 45%;
     margin-right: 0px;
   }
