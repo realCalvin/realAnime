@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29aaa8c11c47b2dc304c9e32b0400314",
+    "revision": "8ceb25cc2e578d478bf28e89af7d972f",
     "url": "/anime/index.html"
   },
   {
-    "revision": "97be0a0e471d7550a37e",
+    "revision": "53a18ac05f154f22c729",
     "url": "/anime/static/css/main.19136527.chunk.css"
   },
   {
@@ -12,16 +12,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/anime/static/js/2.b7bc243c.chunk.js"
   },
   {
-    "revision": "97be0a0e471d7550a37e",
-    "url": "/anime/static/js/main.066ebd23.chunk.js"
+    "revision": "53a18ac05f154f22c729",
+    "url": "/anime/static/js/main.cc3f9517.chunk.js"
   },
   {
     "revision": "59cc1b31dbb0ddc994fc",
     "url": "/anime/static/js/runtime~main.839a7f3c.js"
   },
   {
-    "revision": "1a6dc16baeed5eaa188112443edf22e9",
-    "url": "/anime/static/media/background.1a6dc16b.mp4"
+    "revision": "641428b3e0036418d785e7c59b65a303",
+    "url": "/anime/static/media/background.641428b3.mp4"
   },
   {
     "revision": "201f2e5d9c22d306990ed615385964b6",

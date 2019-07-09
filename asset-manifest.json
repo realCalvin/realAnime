@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/anime/static/css/main.19136527.chunk.css",
-    "main.js": "/anime/static/js/main.066ebd23.chunk.js",
-    "main.js.map": "/anime/static/js/main.066ebd23.chunk.js.map",
+    "main.js": "/anime/static/js/main.cc3f9517.chunk.js",
+    "main.js.map": "/anime/static/js/main.cc3f9517.chunk.js.map",
     "runtime~main.js": "/anime/static/js/runtime~main.839a7f3c.js",
     "runtime~main.js.map": "/anime/static/js/runtime~main.839a7f3c.js.map",
     "static/js/2.b7bc243c.chunk.js": "/anime/static/js/2.b7bc243c.chunk.js",
     "static/js/2.b7bc243c.chunk.js.map": "/anime/static/js/2.b7bc243c.chunk.js.map",
     "index.html": "/anime/index.html",
-    "precache-manifest.bd6299f68cb68c63a6de7f059cc9e8fa.js": "/anime/precache-manifest.bd6299f68cb68c63a6de7f059cc9e8fa.js",
+    "precache-manifest.18e6d629b0d333b8243ed15f6637cc4a.js": "/anime/precache-manifest.18e6d629b0d333b8243ed15f6637cc4a.js",
     "service-worker.js": "/anime/service-worker.js",
     "static/css/main.19136527.chunk.css.map": "/anime/static/css/main.19136527.chunk.css.map",
-    "static/media/background.mp4": "/anime/static/media/background.1a6dc16b.mp4",
+    "static/media/background.mp4": "/anime/static/media/background.641428b3.mp4",
     "static/media/kiminonawa.mp3": "/anime/static/media/kiminonawa.201f2e5d.mp3",
     "static/media/logo.png": "/anime/static/media/logo.0e5719ee.png",
     "static/media/user.png": "/anime/static/media/user.b6681619.png"
