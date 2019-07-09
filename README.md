@@ -7,7 +7,7 @@ Checklist:
 - [X] Store User's Subscribed Animes
 - [X] User Account Settings
 - [X] "Hot" Anime Page
-- [ ] Redesign And Enhance UI/UX Experience
+- [X] Redesign And Enhance UI/UX Experience
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
