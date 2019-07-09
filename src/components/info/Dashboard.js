@@ -53,6 +53,10 @@ class Dashboard extends Component {
             })
     }
 
+    componentDidMount() {
+        console.log("Dashboard")
+    }
+
     render() {
         return (
             <div id="my-dashboard">

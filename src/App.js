@@ -34,7 +34,7 @@ class App extends Component {
         <div className="App">
           <Navbar user={this.state.user} />
           <Switch>
-            <Route exact path='/' component={Dashboard} />
+            <Route path='/' component={Dashboard} />
           </Switch>
         </div>
       </BrowserRouter>
