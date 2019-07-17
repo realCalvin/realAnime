@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/anime/static/css/main.cf0a32bb.chunk.css",
-    "main.js": "/anime/static/js/main.39dc9d4b.chunk.js",
-    "main.js.map": "/anime/static/js/main.39dc9d4b.chunk.js.map",
-    "runtime~main.js": "/anime/static/js/runtime~main.839a7f3c.js",
-    "runtime~main.js.map": "/anime/static/js/runtime~main.839a7f3c.js.map",
-    "static/js/2.b7bc243c.chunk.js": "/anime/static/js/2.b7bc243c.chunk.js",
-    "static/js/2.b7bc243c.chunk.js.map": "/anime/static/js/2.b7bc243c.chunk.js.map",
-    "index.html": "/anime/index.html",
-    "precache-manifest.12db861d978614a76fc31c47a913b734.js": "/anime/precache-manifest.12db861d978614a76fc31c47a913b734.js",
-    "service-worker.js": "/anime/service-worker.js",
-    "static/css/main.cf0a32bb.chunk.css.map": "/anime/static/css/main.cf0a32bb.chunk.css.map",
-    "static/media/background.mp4": "/anime/static/media/background.641428b3.mp4",
-    "static/media/kiminonawa.mp3": "/anime/static/media/kiminonawa.201f2e5d.mp3",
-    "static/media/logo.png": "/anime/static/media/logo.0e5719ee.png",
-    "static/media/user.png": "/anime/static/media/user.b6681619.png"
+    "main.css": "/realAnime/static/css/main.cf0a32bb.chunk.css",
+    "main.js": "/realAnime/static/js/main.9b0e470b.chunk.js",
+    "main.js.map": "/realAnime/static/js/main.9b0e470b.chunk.js.map",
+    "runtime~main.js": "/realAnime/static/js/runtime~main.e5589f91.js",
+    "runtime~main.js.map": "/realAnime/static/js/runtime~main.e5589f91.js.map",
+    "static/js/2.d38b5e68.chunk.js": "/realAnime/static/js/2.d38b5e68.chunk.js",
+    "static/js/2.d38b5e68.chunk.js.map": "/realAnime/static/js/2.d38b5e68.chunk.js.map",
+    "index.html": "/realAnime/index.html",
+    "precache-manifest.54b91c374059d72277e4d7be055f7058.js": "/realAnime/precache-manifest.54b91c374059d72277e4d7be055f7058.js",
+    "service-worker.js": "/realAnime/service-worker.js",
+    "static/css/main.cf0a32bb.chunk.css.map": "/realAnime/static/css/main.cf0a32bb.chunk.css.map",
+    "static/media/background.mp4": "/realAnime/static/media/background.641428b3.mp4",
+    "static/media/kiminonawa.mp3": "/realAnime/static/media/kiminonawa.201f2e5d.mp3",
+    "static/media/logo.png": "/realAnime/static/media/logo.0e5719ee.png",
+    "static/media/user.png": "/realAnime/static/media/user.b6681619.png"
   }
 }
