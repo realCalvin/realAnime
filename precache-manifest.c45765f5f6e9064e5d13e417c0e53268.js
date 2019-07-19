@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75858ff6884dff0d1303b04a65bc67d9",
+    "revision": "0ccaa0bfec30aadc4e9624058e19bc43",
     "url": "/realAnime/index.html"
   },
   {
-    "revision": "7f82d541ca880c76b043",
-    "url": "/realAnime/static/css/main.bcd4f5d0.chunk.css"
+    "revision": "b18525a8d46bc813fde4",
+    "url": "/realAnime/static/css/main.f829095d.chunk.css"
   },
   {
     "revision": "f8781719154e9728644f",
     "url": "/realAnime/static/js/2.d38b5e68.chunk.js"
   },
   {
-    "revision": "7f82d541ca880c76b043",
+    "revision": "b18525a8d46bc813fde4",
     "url": "/realAnime/static/js/main.9b0e470b.chunk.js"
   },
   {
