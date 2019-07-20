@@ -51,7 +51,7 @@ class SubscribedAnimes extends Component {
                 })
             })
             .catch((error) => {
-                console.log(error)
+
             })
         console.log(this.state.anime)
     }
@@ -84,7 +84,7 @@ class SubscribedAnimes extends Component {
                     list = animeList;
                 }
             }).catch(error => {
-                console.log("error")
+
             }).then(() => {
                 if (this.state.animeList == null) {
                     this.setState({

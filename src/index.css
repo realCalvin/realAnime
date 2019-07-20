@@ -486,10 +486,6 @@ Media Queries
   }
 }
 @media screen  and (max-width: 992px) /* Tablet */ {
-  .dashboard-logo{
-    height: 140px;
-    width: 70%;
-  }
   .anime-input{
     width: 25em !important;
   }
@@ -501,7 +497,8 @@ Media Queries
     padding-left: 70px;
   }
   .dashboard-items img{
-    width: 40%;
+    height: 45%;
+    width: 45%;
     margin-right: 45px;
   }
   .hot-anime{
@@ -530,6 +527,11 @@ Media Queries
     padding-top: 15px;
     padding-left: 20px;
   }
+  .dashboard-items img{
+    height: 65%;
+    width: 65%;
+    margin-right: 0px;
+  }
   .anime-modal .anime-info li{
     padding-top: 10px;
   }
@@ -551,13 +553,9 @@ Media Queries
   .anime-input{
     width: 5em !important;
   }
-  .dashboard-logo{
-    height: 90px;
-    width: 70%;
-  }
   .dashboard-items img{
-    height: 90px;
-    width: 45%;
+    height: 65%;
+    width: 65%;
     margin-right: 0px;
   }
   .toggle-arrow{
