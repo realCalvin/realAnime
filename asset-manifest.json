@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/realAnime/static/css/main.5fb7b53d.chunk.css",
+    "main.css": "/realAnime/static/css/main.7b2196af.chunk.css",
     "main.js": "/realAnime/static/js/main.0ce610b8.chunk.js",
     "main.js.map": "/realAnime/static/js/main.0ce610b8.chunk.js.map",
     "runtime~main.js": "/realAnime/static/js/runtime~main.e5589f91.js",
@@ -8,9 +8,9 @@
     "static/js/2.d38b5e68.chunk.js": "/realAnime/static/js/2.d38b5e68.chunk.js",
     "static/js/2.d38b5e68.chunk.js.map": "/realAnime/static/js/2.d38b5e68.chunk.js.map",
     "index.html": "/realAnime/index.html",
-    "precache-manifest.b5a42a2f58143cc2f563a11414c62982.js": "/realAnime/precache-manifest.b5a42a2f58143cc2f563a11414c62982.js",
+    "precache-manifest.14a67dec9fcf44d5834f88953086d0fb.js": "/realAnime/precache-manifest.14a67dec9fcf44d5834f88953086d0fb.js",
     "service-worker.js": "/realAnime/service-worker.js",
-    "static/css/main.5fb7b53d.chunk.css.map": "/realAnime/static/css/main.5fb7b53d.chunk.css.map",
+    "static/css/main.7b2196af.chunk.css.map": "/realAnime/static/css/main.7b2196af.chunk.css.map",
     "static/media/background.mp4": "/realAnime/static/media/background.641428b3.mp4",
     "static/media/kiminonawa.mp3": "/realAnime/static/media/kiminonawa.201f2e5d.mp3",
     "static/media/logo.png": "/realAnime/static/media/logo.0e5719ee.png",

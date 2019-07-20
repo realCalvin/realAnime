@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/realAnime/precache-manifest.b5a42a2f58143cc2f563a11414c62982.js"
+  "/realAnime/precache-manifest.14a67dec9fcf44d5834f88953086d0fb.js"
 );
 
 self.addEventListener('message', (event) => {
