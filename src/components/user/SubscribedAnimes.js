@@ -125,7 +125,7 @@ class SubscribedAnimes extends Component {
                 </div>
                 <div className="modal anime-modal fade" id="subAnimeInfoModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-                        <div className="modal-content anime-modal-content">
+                        <div className="modal-content anime-modal-content info-modal-content">
                             <div className="modal-header">
                                 <Row className="modal-title">
                                     <div className="col-md-12 col-lg-6">

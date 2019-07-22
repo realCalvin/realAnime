@@ -444,6 +444,8 @@ HotAnime.js
   font-size: 22px;
 }
 .hot-anime-image{
+  max-height: 400px;
+  max-width: 300px;
   width: 100%;
 }
 .hot-anime-info{
@@ -545,6 +547,9 @@ Media Queries
   }
   .hot-anime-info .btn{
     position: relative;
+  }
+  .info-modal-content{
+    width: 120%;
   }
 }
 @media screen and (max-width: 575px) /* Mobile */ {

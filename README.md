@@ -1,5 +1,9 @@
 ## Anime Project
 
+---
+Live Demo: [realani.me](https://realani.me/) or [realcalvin.github.io/realAnime/](https://realcalvin.github.io/realAnime/)
+---
+
 Checklist:
 - [x] Functional Base UI
 - [X] API Call To Search Anime
