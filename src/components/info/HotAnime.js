@@ -158,10 +158,10 @@ class HotAnime extends Component {
                         <div className="modal-content anime-modal-content">
                             <div className="modal-header">
                                 <Row className="modal-title">
-                                    <div className="col-md-4">
+                                    <div className="col-md-12 col-lg-4">
                                         <img src={anime.image_url} className="hot-anime-image" alt={anime.title}></img>
                                     </div>
-                                    <div className="col-md-8 anime-info">
+                                    <div className="col-md-12 col-lg-8 anime-info">
                                         <h4>{anime.title}</h4>
                                         <ul className="anime-info">
                                             <h5>Synopsis</h5>

@@ -46,10 +46,10 @@ class AnimeModal extends Component {
                     <div className="modal-content anime-modal-content">
                         <div className="modal-header">
                             <Row className="modal-title">
-                                <div className="col-md-4">
-                                    <img src={anime.image_url} className="anime-image" alt={anime.title}></img>
+                                <div className="col-md-12 col-lg-6">
+                                    <img src={anime.image_url} className="hot-anime-image" alt={anime.title}></img>
                                 </div>
-                                <div className="col-md-8 anime-info">
+                                <div className="col-md-12 col-lg-6 anime-info">
                                     <h4>{anime.title}</h4>
                                     <ul className="anime-info">
                                         <li className="anime-info-item"><strong>Type: </strong>{anime.type}</li>

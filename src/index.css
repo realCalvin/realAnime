@@ -444,7 +444,7 @@ HotAnime.js
   font-size: 22px;
 }
 .hot-anime-image{
-  height: 450px;
+  width: 100%;
 }
 .hot-anime-info{
   position: relative;
@@ -497,7 +497,7 @@ Media Queries
     padding-left: 70px;
   }
   .dashboard-items img{
-    height: 45%;
+    height: 65%;
     width: 45%;
     margin-right: 45px;
   }
@@ -536,8 +536,6 @@ Media Queries
     padding-top: 10px;
   }
   .hot-anime-pic{
-    display: flex;
-    justify-content: center;
     padding-bottom: 15px;
   }
   .hot-anime-btn{
