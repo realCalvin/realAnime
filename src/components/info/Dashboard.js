@@ -7,6 +7,7 @@ import AnimeList from './AnimeList.js'
 import background from '../img/background.mp4'
 import logo from '../img/logo.png'
 
+
 class Dashboard extends Component {
     state = {
         title: null,
@@ -52,15 +53,17 @@ class Dashboard extends Component {
             })
     }
 
+    componentDidMount() {
+        console.log("Dashboard")
+    }
+
     render() {
         return (
             <div id="my-dashboard">
                 <div className="container dashboard-page">
                     <div className="search-box">
                         <div className="row dashboard-items">
-                            <ul className="dashboard-logo-name">
-                                <li><img className="dashboard-logo" src={logo} alt="website-logo" /></li>
-                            </ul>
+                            <img className="dashboard-logo" src={logo} alt="website-logo" />
                             <Search handleSubmit={this.handleSubmit} />
                         </div>
                     </div>

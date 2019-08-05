@@ -20,7 +20,6 @@ App.js
 ***************************************************************
 */
 
-
 /* 
 ***************************************************************
 Navbar.js 
@@ -50,13 +49,9 @@ Navbar.js
   color: inherit;
   text-decoration: none;
 }
-.nav-link-item:hover,
-.nav-link-item:active{
+.nav-link-item:hover{
   color: red;
   text-decoration: none;
-}
-.nav-link-item.active {
-  color: green;
 }
 .userProfileImg{
   margin-left: -5px;
@@ -86,35 +81,29 @@ Navbar.js
     color: rgb(97, 96, 96);
   }
 }
-.anime-image{
-  height: 275px;
-  width: 200px; 
+/* 
+***************************************************************
+AnimeList.js 
+***************************************************************
+*/
+#subscribe-notify{
+  color: green;
+  display: none;
+  padding-top: 10px;
+  padding-left: 10px;
 }
-.anime-image:hover{
-  /* make it so hovering over pops up a small sypnosis box */
-  
-  transition-delay: 0.05s;
+.anime-card{
+  position: relative;
+  padding-bottom: 60px !important;
+  margin: 20px 0px;
 }
-.blue-anime-button:hover{
-  box-shadow: 1px 2px 20px #4a69bd;
-  transition-delay: 0.05s;
+.anime-card .btn{
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%, -50%);
 }
-.anime-card {
-	padding: 5px;
-}
-#animes .col-md-3 .well{
-	height: 420px;
-}
-#animes a{
-	margin-top: 10px;
-}
-#animes h6{
-	margin-top: 10px;
-}
-#anime-song{
-  padding: 5px 0 0 5px;
-  height: 30px;
-  width: 210px;
+.anime-card h6{
+  word-wrap: break-word;
 }
 
 /* 
@@ -143,18 +132,39 @@ video{
   pointer-events: none;
   object-fit: cover;
 }
+#my-dashboard{
+  height: auto;
+}
+
 .dashboard-page{
-  padding-right: 10px;
+  padding-top: 20%;
   z-index: 1;
+  width: 100%;
+}
+.search-box{
+  display: flex;
+}
+.search{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .dashboard-items{
+  justify-content: center;
+}
+#searchForm{
+  justify-content: center;
+}
+.dashboard-items img{
+  width: 30%;
+  margin-right: 35px;
+  margin-bottom: 15px;
+}
+/* .dashboard-items{
   display: block;
   margin-left: auto;
   margin-right: auto;
   transform: translate(-5%,30%);
-}
-.dashboard-logo-name{
-  list-style: none;
 }
 .dashboard-logo{
   display: block;
@@ -162,20 +172,12 @@ video{
   margin-right: auto;
   width: 30%;
   transform: translateX(-60%);
-}
-.dashboard-name{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  transform: translateX(-40%);
-}
-.search-box{
+} */
+/* .search-box{
   transform: translateX(18%);
-}
+} */
 .anime-list{
-  margin-top: 10%;
-  transform: translateY(5%);
+  margin-top: 200px !important;
 }
 .anime-input{
   width: 35em !important;
@@ -183,26 +185,68 @@ video{
 .anime-card{
   padding: 20px;
 }
-
-/* 
-***************************************************************
-AnimeInfo.js 
-***************************************************************
-*/
+.modal-backdrop {
+  z-index: -99;
+}
+.anime-modal-content {
+  position: relative;
+  padding: 20px;
+  height: 800px;
+  overflow-y: scroll;
+}
+.wrapper{
+  position: relative;
+}
+#animeModal{
+  position: absolute;
+}
+.anime-image{
+  height: 275px;
+  width: 200px; 
+}
+.anime-image:hover{
+  /* make it so hovering over pops up a small sypnosis box */
+  transition-delay: 0.05s;
+}
+.blue-anime-button:hover{
+  box-shadow: 1px 2px 20px #4a69bd;
+  transition-delay: 0.05s;
+}
+.anime-card {
+	padding: 5px;
+}
+#animes .col-md-3 .well{
+	height: 420px;
+}
+#animes a{
+	margin-top: 10px;
+}
+#animes h6{
+	margin-top: 10px;
+}
+#anime-song{
+  padding: 5px 0 0 5px;
+  height: 30px;
+  width: 210px;
+}
 .selected-anime{
   padding-top: 5%;
 }
-.anime-info{
+.anime-modal .anime-info{
   list-style-type: none;
+  padding-left: 45px;
 }
-.anime-info li{
+.anime-modal .anime-info li{
   padding-top: 10px;
 }
-.anime-synopsis{
+.anime-modal .anime-synopsis{
   padding: 30px 0 0 15px;
 }
-.nav-anime-btn{
+.anime-modal .nav-anime-btn{
   margin: 5px;
+}
+.anime-modal p{
+  white-space:normal; 
 }
 /* 
 ***************************************************************
@@ -225,18 +269,206 @@ Authentication
 	padding: 0;
 	font: inherit;
 	cursor: pointer;
-	outline: inherit;
+  outline: inherit;
 }
 .modal{
   margin-top: 5em;
-  opacity: 1;
   color: black;
+}
+.modal-open { 
+  overflow-y: auto; 
 }
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]){
   border-color: #eb3b5a;
   box-shadow: none;
+}
+.sign-in-up-btn{
+  font-size: 25px;
+}
+#modal-sign-in{
+  display: flex;
+  flex-wrap: wrap;
+}
+.google-auth-btn{
+  border: black solid 1px;
+}
+.facebook-auth-btn{
+  margin-top: 8px;
+  border: black solid 1px;
+}
+.google-auth-btn:hover{
+  
+  background-color: rgb(252, 222, 208);
+  border-color: rgb(255, 73, 60);
+}
+.facebook-auth-btn:hover{
+  background-color: rgb(191, 216, 255);
+  border-color: rgb(53, 130, 255);
+}
+.fa-google{
+  color: #dd4b39;
+  margin-right: 5px;
+  font-size: 1.2em;
+}
+.fa-facebook-square{
+  color: #3b5998;
+  margin-right: 5px;
+  font-size: 1.4em;
+}
+.sign-in-up-btn:hover{
+  font-size: 26px;
+}
+.auth-selected-btn{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: black 3px solid;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 5px 15px;
+  animation: auth-btns 2.5s infinite;
+}
+@keyframes auth-btns{
+  0%{border-color: black;}
+  50%{border-color: rgb(165, 163, 163);}
+  100%{border-color: black;}
+}
+
+/* 
+***************************************************************
+SubscribedAnimes.js
+***************************************************************
+*/
+.indent{
+  padding-top: 10px;
+  padding-left: 35px;
+  color: rgb(139, 139, 139);
+}
+.subscribedAnimes{
+  padding-bottom: 65px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.subscribedAnimes img, h6:hover{
+  cursor: pointer;
+}
+.subscribedInfo{
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  flex-direction: column;
+}
+.subImg{
+  height: 180px;
+  width: auto;
+}
+.subscribedInfo ul{
+  list-style: none;
+}
+.sub-btn{
+  font-size: 14px;
+  border: 1px solid black;
+  margin-top: 15px;
+  margin-left: 35px;
+  transition: 0.3s;
+}
+.sub-btn:hover{
+  background-color: rgb(82, 82, 82);
+  color: white;
+}
+.delete-btn{
+  font-size: 14px;
+  border: 1px solid red;
+  margin-top: 15px;
+  margin-left: 5px;
+  transition: 0.3s;
+  margin-left: 35px;
+}
+.delete-btn:hover{
+  background-color: rgb(255, 137, 137);
+  color: white;
+}
+#animeDeleted{
+  color: red;
+  font-size: 16px;
+  padding-bottom: 25px;
+  display: none;
+}
+
+/* 
+***************************************************************
+UserSetting.js
+***************************************************************
+*/
+.email-verified-msg #verified{
+  font-size: 14px;
+  color: rgb(121, 255, 121);
+}
+.email-verified-msg #not-verified{
+  font-size: 14px;
+  color: rgb(255, 56, 56);
+}
+.email-verified-msg .fas{
+  font-size: 14px;
+}
+
+/* 
+***************************************************************
+HotAnime.js
+***************************************************************
+*/
+.hot-anime{
+  padding: 15px 10px;
+  box-shadow: 1px 1px 5px 1px #757575;
+  border-radius: 7px;
+  margin: 40px 0px;
+}
+.hot-anime:hover{
+  box-shadow: 5px 5px 12px 1px #757575;
+  transition: 0.4s;
+}
+.btn-filter{
+  margin: 10px;
+}
+.hot-img{
+  width: 275px;
+}
+.hot-list{
+  list-style: none;
+  white-space:normal; 
+}
+.hot-list li{
+  font-size: 22px;
+}
+.hot-anime-image{
+  max-height: 400px;
+  max-width: 300px;
+  width: 100%;
+}
+.hot-anime-info{
+  position: relative;
+}
+.hot-anime-video{
+  display: block;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hot-anime-video iframe{
+  width: 800px;
+  height: 500px;
+}
+.hot-anime-btn{
+  display: flex;
+  justify-content: center;
+}
+.hot-anime-info .btn{
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 20px;
 }
 
 /* 
@@ -255,77 +487,109 @@ Media Queries
     padding-left: 70px;
   }
 }
-@media screen  and (max-width: 990px) /* Tablet */ {
+@media screen  and (max-width: 992px) /* Tablet */ {
   .anime-input{
-    width: 20em !important;
+    width: 25em !important;
+  }
+  .anime-list{
+    margin: 0;
+    padding: 0;
   }
   .dashboard-page{
     padding-left: 70px;
   }
-  .dashboard-logo{
-    width: 40%;
-    transform: translateX(-55%);
+  .dashboard-items img{
+    height: 65%;
+    width: 45%;
+    margin-right: 45px;
   }
-  .dashboard-name{
-    width: 60%;
-    transform: translateX(-35%);
+  .hot-anime{
+    display: block;
   }
-  .selected-anime{
-    padding-left: 70px;
-    transform: translateY(2%);
+  .hot-anime-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 100px;
+  }
+  .hot-anime-info .btn{
+    position: relative;
+  }
+  .hot-anime-video iframe{
+    width: 400px;
+    height: 400px;
   }
 }
 @media screen  and (max-width: 770px) {
   .anime-input{
     width: 17.3em !important;
   }
-  .search-box{
-    transform: translateX(10%);
+  .anime-modal .anime-info{
+    list-style-type: none;
+    padding-top: 15px;
+    padding-left: 20px;
   }
-  .dashboard-logo{
-    width: 60%;
-    transform: translateX(-35%);
+  .dashboard-items img{
+    height: 65%;
+    width: 65%;
+    margin-right: 0px;
   }
-  .dashboard-name{
-    width: 80%;
-    transform: translateX(-20%);
+  .anime-modal .anime-info li{
+    padding-top: 10px;
+  }
+  .hot-anime-pic{
+    padding-bottom: 15px;
+  }
+  .hot-anime-btn{
+    display: flex;
+    justify-content: center;
+    margin: 15px 0 0 0;
+  }
+  .hot-anime-info .btn{
+    position: relative;
+  }
+  .info-modal-content{
+    width: 120%;
   }
 }
 @media screen and (max-width: 575px) /* Mobile */ {
   .anime-input{
     width: 5em !important;
   }
-  .dashboard-logo{
-    width: 70%;
-    transform: translateX(-25%);
-  }
-  .dashboard-name{
-    width: 100%;
-    transform: translateX(-15%);
-  }
-  .search-box{
-    transform: translateX(5%);
-  }
-  .anime-list{
-    padding-left: 10px;
-    transform: translate(-6%,2%);
+  .dashboard-items img{
+    height: 65%;
+    width: 65%;
+    margin-right: 0px;
   }
   .toggle-arrow{
     position: absolute;
     right: 15%;
   }
-  .form-control{
-    width: 13em !important;
+  #searchText{
+    width: 12em !important;
+  }
+  #search-btn{
+    display: none;
+  }
+  .modal{
+    margin-top: 2em;
+  }
+  #modal-auth-sign-in{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+  }
+  #login-submit{
+    margin-left: 8px;
+    margin-bottom: 10px;
+  }
+  .hot-anime-video iframe{
+    width: 300px;
+    height: 300px;
   }
 }
 
 @media screen and (max-width: 468px) /* smaller mobile */ {
-  #search-btn{
-    position: absolute;
-    left: 220px;
-    bottom: 1px;
-  }
-  .anime-list{
-    transform: translate(3%,2%);
-  }
+
 }

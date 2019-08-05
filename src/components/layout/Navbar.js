@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     width: drawerWidth,
     background: 'rgba(0, 0, 0, 0.25)',
     border: 'none',
-    color: 'white',
+    color: 'white !important',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -68,8 +68,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Navbar() {
-
+function Navbar(props) {
   const classes = useStyles();
   // const className = thisStyles();
   const [open, setOpen] = React.useState(false);
@@ -117,8 +116,7 @@ function Navbar() {
         </div>
         <Divider />
         <List>
-          <SignedInLinks />
-          <SignedOutLinks />
+          {props.user ? (<SignedInLinks />) : (<SignedOutLinks />)}
           <MenuItem button key="home" className="list-item">
             <button className="auth-btn nav-link-item" onClick={handlePlay}>
               <div id="toggle-play">

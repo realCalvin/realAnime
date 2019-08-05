@@ -1,6 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Anime Project
 
-## Available Scripts
+---
+Live Demo: [realani.me](https://realani.me/) or [realcalvin.github.io/realAnime/](https://realcalvin.github.io/realAnime/)
+---
+
+Checklist:
+- [x] Functional Base UI
+- [X] API Call To Search Anime
+- [X] User Authentication
+- [X] Store User's Subscribed Animes
+- [X] User Account Settings
+- [X] "Hot" Anime Page
+- [X] Redesign And Enhance UI/UX Experience
+
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
