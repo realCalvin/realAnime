@@ -12,11 +12,11 @@ const SignedOutLinks = () => {
             <SignIn />
             <SignUp />
             <MenuItem button key="hot" className="list-item">
-                <NavLink to="#" className="nav-link-item" data-toggle="modal" data-target="#hotAnimeModal"><i className="fas fa-fire-alt">&nbsp; <span className="list-text">Hot Animes</span></i></NavLink>
+                <NavLink href="#" to="#" className="nav-link-item" data-toggle="modal" data-target="#hotAnimeModal"><i className="fas fa-fire-alt">&nbsp; <span className="list-text">Hot Animes</span></i></NavLink>
             </MenuItem>
             <Divider />
             <MenuItem button key="login" className="list-item">
-                <button className="auth-btn nav-link-item" data-toggle="modal" data-target="#loginModal"><i className="fas fa-sign-in-alt">&nbsp; <span className="list-text">Login/Register</span></i></button>
+                <NavLink href="#" to="#" className="auth-btn nav-link-item" data-toggle="modal" data-target="#loginModal"><i className="fas fa-sign-in-alt">&nbsp; <span className="list-text">Login/Register</span></i></NavLink>
             </MenuItem>
             <Divider />
             <HotAnime />

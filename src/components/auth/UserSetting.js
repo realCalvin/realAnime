@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import $ from 'jquery';
-import firebase from '../../config/firebase'
+import firebase from '../../config/Firebase.js'
 import 'firebase/firestore';
 
 class UserSetting extends Component {

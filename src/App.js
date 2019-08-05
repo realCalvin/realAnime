@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
 import Dashboard from './components/info/Dashboard'
-import firebase from './config/firebase'
+import firebase from '../src/config/Firebase.js'
 
 class App extends Component {
 

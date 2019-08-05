@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Row } from 'react-bootstrap';
 import $ from 'jquery';
-import firebase from '../../config/firebase'
+import firebase from '../../config/Firebase.js'
 import 'firebase/firestore';
 import axios from 'axios'
 // eslint-disable-next-line
@@ -51,7 +51,7 @@ class SubscribedAnimes extends Component {
                 })
             })
             .catch((error) => {
-
+                console.log(error)
             })
         console.log(this.state.anime)
     }
@@ -84,7 +84,7 @@ class SubscribedAnimes extends Component {
                     list = animeList;
                 }
             }).catch(error => {
-
+                console.log("error")
             }).then(() => {
                 if (this.state.animeList == null) {
                     this.setState({
@@ -125,13 +125,13 @@ class SubscribedAnimes extends Component {
                 </div>
                 <div className="modal anime-modal fade" id="subAnimeInfoModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div className="modal-dialog modal-dialog-scrollable modal-xl" role="document">
-                        <div className="modal-content anime-modal-content info-modal-content">
+                        <div className="modal-content anime-modal-content">
                             <div className="modal-header">
                                 <Row className="modal-title">
-                                    <div className="col-md-12 col-lg-6">
-                                        <img src={anime.image_url} className="hot-anime-image" alt={anime.title}></img>
+                                    <div className="col-md-4">
+                                        <img src={anime.image_url} className="anime-image" alt={anime.title}></img>
                                     </div>
-                                    <div className="col-md-12 col-lg-6 anime-info">
+                                    <div className="col-md-8 anime-info">
                                         <h4>{anime.title}</h4>
                                         <ul className="anime-info">
                                             <li className="anime-info-item"><strong>Type: </strong>{anime.type}</li>

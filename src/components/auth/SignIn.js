@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase from '../../config/firebase'
+import firebase from '../../config/Firebase.js'
 import SignUp from './SignUp'
 import ForgotPassword from './ForgotPassword'
 class SignIn extends Component {

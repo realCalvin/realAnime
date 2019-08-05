@@ -422,7 +422,7 @@ HotAnime.js
 */
 .hot-anime{
   padding: 15px 10px;
-  box-shadow: 1px 1px 5px 1px #757575;
+  box-shadow: 1px 1px 12px 1px #757575;
   border-radius: 7px;
   margin: 40px 0px;
 }
@@ -444,9 +444,7 @@ HotAnime.js
   font-size: 22px;
 }
 .hot-anime-image{
-  max-height: 400px;
-  max-width: 300px;
-  width: 100%;
+  height: 450px;
 }
 .hot-anime-info{
   position: relative;
@@ -499,8 +497,7 @@ Media Queries
     padding-left: 70px;
   }
   .dashboard-items img{
-    height: 65%;
-    width: 45%;
+    width: 40%;
     margin-right: 45px;
   }
   .hot-anime{
@@ -529,15 +526,12 @@ Media Queries
     padding-top: 15px;
     padding-left: 20px;
   }
-  .dashboard-items img{
-    height: 65%;
-    width: 65%;
-    margin-right: 0px;
-  }
   .anime-modal .anime-info li{
     padding-top: 10px;
   }
   .hot-anime-pic{
+    display: flex;
+    justify-content: center;
     padding-bottom: 15px;
   }
   .hot-anime-btn{
@@ -548,17 +542,18 @@ Media Queries
   .hot-anime-info .btn{
     position: relative;
   }
-  .info-modal-content{
-    width: 120%;
-  }
 }
 @media screen and (max-width: 575px) /* Mobile */ {
   .anime-input{
     width: 5em !important;
   }
+  .dashboard-logo{
+    height: 90px;
+    width: 70%;
+  }
   .dashboard-items img{
-    height: 65%;
-    width: 65%;
+    height: 90px;
+    width: 45%;
     margin-right: 0px;
   }
   .toggle-arrow{
