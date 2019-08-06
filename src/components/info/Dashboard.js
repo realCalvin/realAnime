@@ -4,8 +4,8 @@ import $ from 'jquery';
 import axios from 'axios';
 import Search from './Search'
 import AnimeList from './AnimeList.js'
-import background from '../img/background.mp4'
 import logo from '../img/logo.png'
+import background1 from '../img/background1.mp4'
 
 
 class Dashboard extends Component {
@@ -73,7 +73,7 @@ class Dashboard extends Component {
                 </div>
                 <div id="video-container">
                     <video id="dashboard-background" autoPlay loop muted playsInline>
-                        <source src={background} type="video/mp4" />
+                        <source id="anime-background" src={background1} type="video/mp4" />
                     </video>
                 </div>
             </div>
