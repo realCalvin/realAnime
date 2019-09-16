@@ -94,17 +94,18 @@ function Navbar(props) {
     if (play) {
       song.muted = false;
       song.play();
-      $("#play-icon").css("display","none");
-      $("#stop-icon").css("display","inline-block");
+      $("#play-icon").css("display", "none");
+      $("#stop-icon").css("display", "inline-block");
     } else {
       song.pause();
-      $("#play-icon").css("display","inline-block");
-      $("#stop-icon").css("display","none");
+      song.muted = true;
+      $("#play-icon").css("display", "inline-block");
+      $("#stop-icon").css("display", "none");
     }
   }
   function handleSkip() {
     counter++;
-    if(counter === num_of_bg){
+    if (counter === num_of_bg) {
       counter = 0;
     }
     var song = document.getElementById('anime-song');
@@ -114,12 +115,13 @@ function Navbar(props) {
     video.load();
     video.play();
     $("#anime-song").attr("src", audio[counter])
-    song.muted = false;
     song.pause();
     song.load();
     song.play();
-    $("#play-icon").css("display","none");
-    $("#stop-icon").css("display","inline-block");
+    song.muted = true;
+    play = false;
+    $("#play-icon").css("display", "inline-block");
+    $("#stop-icon").css("display", "none");
   }
 
   function handleDrawerToggle() {
@@ -161,15 +163,15 @@ function Navbar(props) {
               <div id="toggle-play">
                 <i id="play-icon" className="fas fa-play"> </i>
                 <i id="stop-icon" className="fas fa-stop"> </i>
-                <span className="list-text"><audio id="anime-song" src={audio1} controls autoPlay muted playsInline/></span>
+                <span className="list-text"><audio id="anime-song" src={audio1} controls autoPlay muted playsInline /></span>
               </div>
             </button>
           </MenuItem>
           <Divider />
           <MenuItem button key="skip" className="list-item">
             <button className="auth-btn nav-link-item" onClick={handleSkip}>
-                <i className="fas fa-forward"><span className="list-text">&nbsp; Skip</span></i>
-                
+              <i className="fas fa-forward"><span className="list-text">&nbsp; Skip</span></i>
+
             </button>
           </MenuItem>
           <Divider />

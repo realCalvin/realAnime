@@ -428,7 +428,7 @@ HotAnime.js
 */
 .hot-anime{
   padding: 15px 10px;
-  box-shadow: 1px 1px 5px 1px #757575;
+  box-shadow: 1px 1px 4px 0.5px #757575;
   border-radius: 7px;
   margin: 40px 0px;
 }
