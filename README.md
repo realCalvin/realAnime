@@ -1,7 +1,7 @@
 ## Anime Project
 
 ---
-Live Demo: [realani.me](https://realani.me/) or [realcalvin.github.io/realAnime/](https://realcalvin.github.io/realAnime/)
+Live Demo: [realcalvin.github.io/realAnime/](https://realcalvin.github.io/realAnime/)
 ---
 
 Checklist:
