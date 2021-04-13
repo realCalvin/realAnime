@@ -12,7 +12,7 @@
     "@material-ui/icons": "^4.0.1",
     "axios": "^0.18.1",
     "bootstrap": "^4.3.1",
-    "firebase": "^6.1.0",
+    "firebase": "^8.4.1",
     "firestore": "^1.1.6",
     "jquery": "^3.5.0",
     "materialize-css": "^1.0.0",
