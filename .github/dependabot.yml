@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: firebase
+    versions:
+    - 8.2.10
+    - 8.2.4
+    - 8.2.5
+    - 8.2.6
+    - 8.2.7
+    - 8.2.8
+    - 8.2.9
+    - 8.3.0
+    - 8.3.1
+    - 8.3.2
+    - 8.3.3
+    - 8.4.1
+  - dependency-name: react-bootstrap
+    versions:
+    - 1.4.3
+    - 1.5.0
+    - 1.5.1
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: redux-firestore
+    versions:
+    - 0.14.0
+  - dependency-name: redux
+    versions:
+    - 4.0.5
